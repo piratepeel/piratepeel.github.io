@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="author"/> 
+<script type="text/javascript" src="lib/d3.v3/d3.v3.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <style type="text/css">
+
+.body {
+    background-color: #fff;
+}
+
+path.arc {
+  cursor: move;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font-size: 14px;
+  fill: #fff;
+  pointer-events: none;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+    </style>
+  </head>
+
+<title>Leto Peel</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39202310-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<div class="wrapper">
+
+	<div class="container">
+
+		<div class="main">		
+			
+			<div id="content"; class="content">
+            <div class="title">Leto Peel</div>
+				<p class="olive">Research Homepage</p>
+                
+				<h2>Change-point detection in networks</h2>
+                
+        <p>Here is a demo of our method for <a href="http://arxiv.org/abs/1403.0989" onClick="_gaq.push(['_trackEvent', 'Papers', 'Downloaded', 'Change Point_demo']);">
+                detecting change points in the large-scale structure of evolving networks</a> (<a href="code/cpdetectr1.1.tar.gz" onClick="_gaq.push(['_trackEvent', 'Code', 'Downloaded', 'CPdetect_demo']);">code</a>).  
+                The data is from the 
+                <a href="http://realitycommons.media.mit.edu/realitymining.html">
+                MIT Reality Mining</a> experiment in which 97 MIT faculty and graduate students carried smart phones that recorded proximity
+                data continuously via Bluetooth scans over 35 weeks.
+        
+        <p><p>
+
+        From the raw scan data, we extracted a sequence of weekly networks, in which an edge denotes physical proximity to one of 
+        the 97 subjects at some point that week.
+
+        <p><p>The results using our method are shown below, which includes the identified change points, 
+         the inferred GHRG dendrograms, and highlighted external events.
+
+                
+        </div>
+				<iframe src="sidenav.html" width="210" height="800" frameborder="0">
+				<a href="sidenav.html">Hmm, you are using a very old browser.
+				Click here to go directly to included content.</a>
+				</iframe>
+
+				<!--<h2>Something</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="publications.html">Publications</a></li>
+					<li><a href="links.html">Links</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>-->
+
+			
+
+			<div class="clearer"></div>
+            <div>
+            <p><p style="margin-left:21em;">The GHRG method identifies nearly all of the known external events, along with a few additional change points, e.g., one week before and one week after Sponsor week. 
+        This fact agrees well with the social dynamics of Sponsor week, an event involving 75 of the subjects and which typically shifts work schedules dramatically as they seek to meet 
+        deadlines and project goals. 
+
+        <p><p style="margin-left:21em;">
+        Additionally, the GHRG method finds more change points in the Fall semester than in the Spring. Examining the dendrograms themselves, we find that the changes in the 
+        inferred structures in the Fall are much more dramatic than in the Spring. This agrees with the fact that 35 of the subjects were new students in the Fall semester and thus still 
+        establishing their social patterns. By the Spring semester, these patterns had largely stabilized, and the large perturbation of Sponsor week was absent. 
+        Overall, the GHRG both recovers known events, highlights additional changes, and provides an interpretable basis for discovering new patterns within this evolving network.
+        </div>
+
+		</div>
+
+		<div class="footer">
+		</div>
+
+	</div>
+
+</div>
+
+
+</body>
+
+</html>
+    
+<script type="text/javascript">
+
+var w = 1280,
+    h = 500,
+    rx = w / 3,
+    ry = 300,
+    m0,
+    rotate = 0
+    div_height = w/3;
+
+var _div = document.createElement('div');
+  _div.id="body";
+
+ d3.xml("MITresults.svg", "image/svg+xml", function(xml) {
+    _div.appendChild(xml.documentElement);
+
+   d3.select("#svg2").attr("width",w/1.7)
+        .attr("height",div_height/2.2)
+        .attr("background-color","#fff");
+        
+});
+ //~ document.body.appendChild(_div);
+//~ document.body.insertBefore(_div, document.body.firstChild);
+document.getElementById('content').appendChild(_div);
+
+var color = d3.scale.category20b();
+for(var i = 0; i < 20; i++) {
+console.log(color(i))
+}
+
+var colorinternal = d3.scale.linear()
+    .domain([0, 1])
+    .range(["white", "black"]);
+    
+function comparator(a, b) {
+    //~ console.log(parseInt(a.id),parseInt(b.id));
+    if (a.id.charAt(0)=="D" || a.id.charAt(0)=="r" || b.id.charAt(0)=="D" || b.id.charAt(0)=="r") {
+  return d3.descending(a.id, b.id);}
+  else {
+  return d3.descending(parseInt(a.id), parseInt(b.id));
+  }
+  //~ return a.id - b.id;
+}
+
+var cluster = d3.layout.cluster()
+    .size([360, ry - 120])
+    .sort(comparator);
+
+var diagonal = d3.svg.diagonal.radial()
+    .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
+
+
+
+var svg = d3.select("#body").append("div")
+//~ var svg = _div.append("div")
+    .style("width", w + "px")
+    .style("height", div_height + "px");
+
+
+
+var vis = svg.append("svg:svg")
+    .attr("width", w)
+    .attr("height", div_height)
+  .append("svg:g")
+    .attr("transform", "translate(" + rx + "," + ry/1.35 + ")");
+
+vis.append("svg:path")
+    .attr("class", "arc")
+    .attr("d", d3.svg.arc().innerRadius(ry - 120).outerRadius(ry).startAngle(0).endAngle(2 * Math.PI));
+
+    
+
+var jsonfiles=[
+            "2004-09-05_joint_s1-consensus.json","2004-09-05_joint_s1-consensus.json",
+            "2004-09-12_joint_s1-consensus.json",
+            "2004-09-19_joint_s1-consensus.json",
+            "2004-10-10_joint_s1-consensus.json",
+            "2004-10-10_joint_s1-consensus.json",
+            "2004-10-10_joint_s1-consensus.json",
+            "2004-10-17_joint_s1-consensus.json",
+            "2004-10-24_joint_s1-consensus.json",
+            "2004-10-31_joint_s1-consensus.json",
+            "2004-11-14_joint_s1-consensus.json",
+            "2004-11-14_joint_s1-consensus.json",
+            "2004-11-28_joint_s1-consensus.json",
+            "2004-11-28_joint_s1-consensus.json",
+            "2004-12-05_joint_s1-consensus.json",
+            "2004-12-12_joint_s1-consensus.json",
+            "2004-12-19_joint_s1-consensus.json",
+            "2005-01-02_joint_s1-consensus.json",
+            "2005-01-02_joint_s1-consensus.json",
+            "2005-01-16_joint_s1-consensus.json",
+            "2005-01-16_joint_s1-consensus.json",
+            "2005-01-30_joint_s1-consensus.json",
+            "2005-01-30_joint_s1-consensus.json",
+            "2005-03-06_joint_s1-consensus.json",
+            "2005-03-06_joint_s1-consensus.json",
+            "2005-03-06_joint_s1-consensus.json",
+            "2005-03-06_joint_s1-consensus.json",
+            "2005-03-06_joint_s1-consensus.json",
+            "2005-03-20_joint_s1-consensus.json",
+            "2005-03-20_joint_s1-consensus.json",
+            "2005-04-03_joint_s1-consensus.json",
+            "2005-04-03_joint_s1-consensus.json"];
+
+var i = 0,
+    start=0,
+    duration=1000,
+    hold=1500;
+//~ while (i<jsonfiles.length) {
+//~ updateconsensus("json/"+jsonfiles[i],start)
+//~ i=i+1
+//~ start=start+duration+hold
+//~ };
+
+updateconsensus(i,start)
+
+datetext=vis.append("svg:text")
+        .text("")
+        .attr("y",-h/2.5)
+
+function updateconsensus(i,delay){
+    var t = i*29.3;
+    
+    if (i+1==jsonfiles.length) { t=0; };
+
+    var nl=d3.select("#timenow")
+        .transition()
+        .delay(delay+duration)
+        .duration(hold)
+        .attr("transform", "translate(" + t + ",40)");
+    
+    
+    
+    jsonfile="json/"+jsonfiles[i]
+    //~ console.log(jsonfile)
+    d3.json(jsonfile, function(errors,json) {
+    data2=json
+    //~ console.log(data2)
+    nodes = cluster.nodes(data2);
+    
+    
+    //-----------------------------------------------LINKS---------------------------------
+    
+    link = vis.selectAll("path.link")
+    
+    ldata = link.data(cluster.links(nodes), function(d){ return (d.source.id,d.target.id);})
+    
+    //enter
+    lines=  ldata.enter().append("svg:path")
+      .attr("class", "link")
+      .style("stroke","skyblue")
+      .style("opacity", 0)
+      .attr("d", diagonal);
+    
+    //update (enter)
+    ldata
+        .transition()
+        .delay(delay)
+        .duration(duration)
+        .style("opacity", 1);
+    
+    //update (transition)
+    link.data(cluster.links(nodes), function(d){ return (d.source.id,d.target.id);})
+        //~ .style("opacity", 0)
+        .transition()
+        .delay(delay)
+        .duration(duration)
+        //~ .style("stroke","black")
+        .style("opacity", 1)
+        .attr("d", diagonal);
+        
+    
+    //exit
+    ldata.exit()
+    //~ .style("stroke","red")
+    .transition()
+    .duration(duration)
+    .delay(delay)
+    .style("opacity", 0)
+    .remove();
+    
+    
+    //-----------------------------------------------NODES---------------------------------
+    
+    node = vis.selectAll("g.node");
+    
+    ndata=node.data(nodes, function(d){ return d.id;})
+    
+    //enter
+    gs=ndata.enter().append("svg:g")
+        .style("opacity", 0)
+        .attr("class", "node")
+        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+    
+    
+  gs.append("svg:text")
+      .attr("y", "4")
+      .attr("x", function(d) { return d.x < 180 ? 8 : -8; })
+      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+      .text(function(d) { if (d.id.charAt(0)=="D" || d.id.charAt(0)=="r") { return ""; } else { return d.id; } })
+      //~ .text(function(d) {  return d.id; })
+
+  gs.append("svg:circle")
+    .attr("r", 5)
+    .style("fill", function(d) { if (d.id.charAt(0)=="D" || d.id.charAt(0)=="r") { return colorinternal(d.p); } else { return color(d.group); }})
+    .style("stroke", function(d) { if (d.id.charAt(0)=="D" || d.id.charAt(0)=="r") { return "black"; } else { return color(d.group); }});
+    
+    ndata
+        .transition()
+        .delay(delay)
+        .duration(duration)
+        .style("opacity", 1);
+    
+    //update (transition)
+    node.data(nodes, function(d){ return d.id;})
+        //~ .style("opacity", 0)
+        .transition()
+        .delay(delay)
+        .duration(duration)
+        .style("opacity", 1)
+        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+        
+    node.data(nodes, function(d){ return d.id;})
+        .select("text")
+        .transition()
+        .delay(delay+duration*.5)
+        .duration(duration*.35)
+        //~ .attr("y", "8")
+        .attr("x", function(d) { return d.x < 180 ? 8 : -8; })
+        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+        .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+      
+      node.data(nodes, function(d){ return d.id;})
+      .select("circle").transition()
+        .delay(delay+duration)
+        .duration(hold/2)
+        .style("fill", function(d) { if (d.id.charAt(0)=="D" || d.id.charAt(0)=="r") { return colorinternal(d.p); } else { return color(d.group); }})
+        //~ .style("stroke", function(d) { if (d.id.charAt(0)=="D" || d.id.charAt(0)=="r") { console.log(jsonfile+","+delay+","+duration); return "black"; } else { return color(d.group); }});
+        .style("stroke", function(d) { if (d.id.charAt(0)=="D" || d.id.charAt(0)=="r") { return "black"; } else { return color(d.group); }});
+
+        
+
+    
+    //exit
+    ndata.exit()
+    .transition()
+    .duration(duration)
+    .delay(delay)
+    .style("opacity", 0)
+    .remove()
+    ;
+    
+    
+    if (i+1==jsonfiles.length) {i=0;};
+    console.log(i,jsonfiles.length);
+    
+    datetext//.text("")
+        .transition()
+        .style("size", "20")
+        .delay(delay+duration)
+        .duration(hold)
+        //~ .text(jsonfile)
+        .text("")
+        .each("end", function() { updateconsensus(i+1,delay) })
+    
+    
+    });
+}
+
+
+
+function cross(a, b) {
+  return a[0] * b[1] - a[1] * b[0];
+}
+
+function dot(a, b) {
+  return a[0] * b[0] + a[1] * b[1];
+}
+
+    </script>
+  </body>
+</html>

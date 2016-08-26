@@ -1,0 +1,136 @@
+/*#############################################################
+Name: Contaminated
+Date: 2007-01-04
+Description: A trash style website template
+Author: Viktor Persson
+URL: http://templates.arcsin.se
+
+Feel free to use and modify but please provide credits.
+#############################################################*/
+
+/* standard elements */
+html {min-height: 100%;}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {color: #FF3;}
+a:hover {color: #AA3;}
+
+/*body {
+	background: url(images/bg1.jpg) no-repeat top left;
+	color: #DDD;
+	font: normal 62.5% "Trebuchet MS",Verdana,sans-serif;
+}
+*/
+body {	
+    background: #000000;
+    font: normal 62.5% "Trebuchet MS",Verdana,sans-serif;
+    color: #DDD;
+    padding-bottom: 25px;
+}
+
+#back{
+    background: url(images/bg1.jpg) no-repeat top right;
+    width: 1207px;
+    margin: 0 auto;
+}
+
+p,code,ul {padding-bottom: 1.2em;}
+
+h1 {
+	font: normal 1.8em Tahoma,sans-serif;
+	margin-bottom: 4px;
+}
+
+h2 {background: url(img/stripes.gif) repeat-x left bottom; color: #FA9600; font: normal 2em Impact,sans-serif; margin-bottom: 8px; padding-bottom: 11px; letter-spacing: 1px;}
+
+blockquote {
+	color: #CCA;
+	display: block;
+	font-weight: bold;
+	padding-left: 28px;
+}
+
+h1,h2 {padding-top: 6px;}
+
+
+
+/* misc */
+.clearer {
+	clear: both;
+	font-size: 0;
+}
+.left {float: left;}
+.right {float: right;}
+
+/* structure */
+.wrapper {
+	font-size: 1.3em;
+	margin: 0 auto;
+	width: 780px;
+}
+.container {}
+
+/* title */
+.title {
+	font: normal 3em Tahoma,sans-serif;
+	/*text-decoration: line-through;*/
+}
+.olive {color: #CCA;}
+
+/* sub navigation */
+.sidenav {
+	/*background: url(img/bg1.jpg) no-repeat right top;
+	background-size: 50%;*/
+	background: url(img/bg1.jpg) no-repeat top right;
+	padding-top: 251px;
+	float: left;
+	width: 210px;
+}
+.sidenav h2 {
+	color: #FA9600;
+	font-size: 1.7em;
+	line-height: 30px;
+	margin: 0;
+}
+.sidenav ul {padding: 0.5em 0 0 0.5em;}
+.sidenav li {list-style: none;}
+.sidenav li a {
+	font-size: 1.4em;
+	line-height: 1.9em;
+	color: #777;
+	text-decoration: none;
+}
+.sidenav li a:hover {color: #FA9600;}
+
+/* content */
+.content {
+	float: right;
+	margin: 10px 0;
+	padding-top: 32px;
+	width: 531px;
+}
+.emph {
+	color: #8DC63F;
+}
+.content .descr {
+	color: #8DC63F;
+	margin-bottom: 6px;
+}
+.content li {margin-left: 18px;}
+
+/* footer */
+.footer {
+	/*background: url(img/bgfooter.gif) repeat-x;*/
+	border-top: 1px dashed #333;
+	color: #777;
+	font: normal 0.9em sans-serif;
+	padding: 10px 0 16px;
+}
+.footer a {
+	color: #784;
+	text-decoration: none;
+}

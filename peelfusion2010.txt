@@ -1,0 +1,6 @@
+@INPROCEEDINGS{PeelFUSION2010,
+  author       = {"Leto Peel"},
+  title        = {Estimating Network Parameters for Selecting Community Detection Algorithms},
+  booktitle    = {13th International Conference on Information Fusion (FUSION 2010)},
+  year         = {2010},
+}

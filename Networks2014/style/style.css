@@ -1,0 +1,396 @@
+body {
+    font-family: Helvetica, Tahoma, Verdana, sans-serif;
+    font-size: small;
+    width: 44em;
+    margin-left: 8%;
+    margin-top: 4em;
+    background: white;
+}
+
+p {
+   text-align: justify;
+}
+
+#title h1 {
+    color: #231815;
+}
+
+#navigation {
+    border-top: #0099FF solid medium;
+    border-bottom: #0099FF solid medium;
+}
+
+#navigation ul {
+    margin: 0.2em;
+    padding: 0em;
+    text-align: center;
+}
+
+#navigation li {
+    display: inline;
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+#navigation a {
+    color: #231815;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    color: #0099FF;
+}
+
+#organizers a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#organizers a:hover {
+    color: #0099FF;
+}
+
+#related_work a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#related_work a:hover {
+    color: #0099FF;
+}
+
+#call a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#call a:hover {
+    color: #CFAF48;
+}
+
+#ispeakers a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#ispeakers a:hover {
+    color: #0099FF;
+}
+
+#motivation a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#motivation a:hover {
+    color: #0099FF;
+}
+
+#submission a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+#submission a:hover {
+    color: #0099FF;
+}
+
+
+
+p.emph {
+  font-weight: bold;
+  color: #B20000;
+}
+
+td.datehdr {
+   font-weight: bold;
+}
+
+#logo {
+    margin-top: 1em;
+    margin-right: 2em;
+    float: right;
+}
+
+#logo img {
+    width: 100px;
+}
+
+#footer {
+    text-align: center;
+    font-size: smaller;
+    font-style: italic;
+    margin-top: 10em;
+}
+
+td.time {
+text-align: center;
+}
+
+table.schedule {
+    border-spacing: 0px;
+    width: 100%;
+    border-color: gray;
+}
+
+table.schedule td {
+    border-top: navy solid thin;
+    border-left: none;
+    border-right: none;
+/*    font-size: smaller; */
+    padding: 5px;
+}
+
+table.schedule h1 {
+    text-align: center;
+    margin: 0px;
+}
+
+table.schedule h2 {
+    text-align: center;
+    margin: 0px;
+}
+
+table.schedule h3 {
+    text-align: center;
+    margin: 0px;
+}
+
+table.schedule #talklabel {
+  text-align: center;
+  font-weight: bold;
+}
+
+table.schedule caption {
+    font-size: 2em;
+    font-style: italic;
+    padding: 0.5em;
+}
+
+table.schedule a {
+    color: #231815;
+    /* font-weight: bold; */
+    text-decoration: underline;
+}
+
+table.schedule a:hover {
+    color: #0099FF;
+}
+
+
+/* References ------------------------------ */
+.references .authors {
+    margin-right: 1em;
+    display: inline;
+}
+
+.references .title {
+    margin-right: 1em;
+    display: inline;
+    font-style: italic;
+}
+
+.references .info {
+    display: inline;
+}
+
+
+
+
+/* Abstracts ------------------------------ */
+.abstracts .title {
+    font-size: medium;
+    font-weight: bold;
+    color:  #222255;
+}
+
+.abstracts .authors {
+    color: #222255;
+}
+
+.abstracts .abstracttext {
+    margin: 1em;
+    text-align: justify;
+}
+
+.abstracts li {
+    margin-bottom: 5em;
+}
+
+.abstracts a {
+    color: #231815;
+    font-weight: bold;
+}
+
+.abstracts a:hover {
+    color: #0099FF;
+}
+
+/* Posters ------------------------------ */
+.posters .title {
+    font-size: medium;
+    font-weight: bold;
+    color:  #222255;
+}
+
+.posters .authors {
+    color: #222255;
+}
+
+.posters .abstracttext {
+    margin: 1em;
+    text-align: justify;
+}
+
+.posters li {
+    margin-bottom: 2em;
+}
+
+.posters a {
+    color: #231815;
+    font-weight: bold;
+}
+
+.posters a:hover {
+    color: #0099FF;
+}
+
+
+
+/* 
+ * table.schedule td {
+ *     border-width: 1px;
+ *     padding: 1px;
+ *     border-style: inset;
+ *     border-color: gray;
+ *     background-color: white;
+ * }
+ */
+
+
+
+/* 
+ * #Header {
+ * font-size: 125%;
+ * font-weight: 900;
+ * color:#a44;
+ * margin:20px 0px 10px 0px;
+ * padding:10px 0px 10px 20px;
+ * /\* For IE5/Win's benefit height = [correct height] + [top padding] + [top and bottom border widths] *\/
+ * height:33px; /\* 14px + 17px + 2px = 33px *\/
+ * border-style:solid;
+ * border-color:black;
+ * border-width:1px 0px; /\* top and bottom borders: 1px; left and right borders: 0px *\/
+ * line-height:11px;
+ * background-color:#eee;
+ * 
+ * /\* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity.
+ * Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it.
+ * IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style
+ * declaration. The incorrect IE5/Win value is above, while the correct value is
+ * below. See http://glish.com/css/hacks.asp for details. *\/
+ * voice-family: "\"}\"";
+ * voice-family:inherit;
+ * height:14px; /\* the correct height *\/
+ * }
+ */
+
+/* 
+ * a
+ * {
+ *   color: black;
+ *   font-weight: bold;
+ *   font-size: 95%;
+ *   text-decoration: none;
+ * }
+ * 
+ * blockquote
+ * {
+ *   font-style: italic;
+ * }
+ * 
+ * .attribution
+ * {
+ *   font-style: normal;
+ * }
+ * 
+ * brag
+ * {
+ * 	font-style: italic;
+ * 	font-weight: bold;
+ * 	color: #2244ff;
+ * }
+ * 
+ * a:hover
+ * {
+ *   color: #000077;
+ * }
+ * 
+ * table 
+ * {
+ *   border-width: 5px;
+ *   border-color: blue;
+ * 
+ * }
+ * 
+ * 
+ * 
+ * .loose
+ * {
+ *   padding-top: 5px;
+ *   padding-bottom: 5px;
+ * }
+ * 
+ * img
+ * {
+ *   border: 0px;
+ * }
+ * 
+ * body
+ * {
+ *   font-family: Tahoma,Verdana,sans-serif;
+ *   font-size: small;
+ *   width: 44em;
+ *   margin-left: 8%;
+ *   margin-top: 4em;
+ * }
+ * 
+ * h1
+ * {
+ *   font-size: 220%;
+ *   color: #222255;
+ * }
+ * 
+ * h2
+ * {
+ *   font-size: 110%;
+ *   color: #444477;
+ * }
+ * 
+ * .small
+ * {
+ *   font-size: 90%;
+ * }
+ * 
+ * .smaller
+ * {
+ *   font-size: 80%;
+ * }
+ * 
+ * .right
+ * {
+ *   text-align: right;
+ * }
+ * 
+ * .footer
+ * {
+ *   margin-top: 4em;
+ * }
+ */
