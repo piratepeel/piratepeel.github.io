@@ -33,7 +33,7 @@ body {
 }
 
 #back{
-    background: url(images/bg1.jpg) no-repeat top right;
+    /*background: url(images/bg1.jpg) no-repeat top right; */
     width: 1207px;
     margin: 0 auto;
 }
@@ -106,6 +106,14 @@ h1,h2 {padding-top: 6px;}
 }
 .sidenav li a:hover {color: #FA9600;}
 
+.news li { margin-bottom: 10px; font-size: 1.4em; line-height: 1.5em;}
+.news li a {
+	font-size: 1em;
+	line-height: 1em;
+	color: #777;
+	text-decoration: none;
+}
+
 /* content */
 .content {
 	float: right;
@@ -134,3 +142,16 @@ h1,h2 {padding-top: 6px;}
 	color: #784;
 	text-decoration: none;
 }
+
+td,th{
+  border-top: 10px solid #000;
+  border-bottom: 10px solid #000;
+  /*border: 20px solid #000;
+  border-right:0px;*/
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+ tr>td:first-child {
+   border-right:20px solid #000;
+ }
