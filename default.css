@@ -155,3 +155,23 @@ td,th{
  tr>td:first-child {
    border-right:20px solid #000;
  }
+ 
+ 
+ 
+ 
+ 
+.service table {
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+.service td {
+  border: 0px;
+}
+.service th,
+.service td {
+  padding: 0px 0px;
+}
+
+.service li{
+  margin: 10px 0;
+}
