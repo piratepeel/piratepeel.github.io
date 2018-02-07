@@ -10,12 +10,58 @@
 <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
 <title>Leto Peel</title>
 
+<script language="javascript">
+ScrollRate = 100;
+
+function scrollDiv_init() {
+	DivElmnt = document.getElementById('news');
+	ReachedMaxScroll = false;
+	
+	DivElmnt.scrollTop = 0;
+	PreviousScrollTop  = 0;
+	
+	ScrollInterval = setInterval('scrollDiv()', ScrollRate);
+}
+
+
+
+function scrollDiv() {
+	
+	if (!ReachedMaxScroll) {
+		DivElmnt.scrollTop = PreviousScrollTop;
+		PreviousScrollTop++;
+		
+		ReachedMaxScroll = DivElmnt.scrollTop >= (DivElmnt.scrollHeight - DivElmnt.offsetHeight);
+	}
+	else {
+    
+        DivElmnt.scrollTop = 0;
+        PreviousScrollTop  = 0;
+        
+        ReachedMaxScroll = false;
+	}
+}
+
+function pauseDiv() {
+	clearInterval(ScrollInterval);
+}
+
+function resumeDiv() {
+	PreviousScrollTop = DivElmnt.scrollTop;
+	ScrollInterval    = setInterval('scrollDiv()', ScrollRate);
+}
+</script>
 
 </head>
 
-<body>
+<body onLoad="scrollDiv_init()">
 
 <div class="sidenav">
+
+<!--div id="MyDivName" style="overflow:auto;width:200px;height:100px" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()">
+
+</div-->
+
 <!--<h2>Something</h2>-->
 	<ul>
 		<li><a href="index.html" target="_parent">Home</a></li>
@@ -28,13 +74,14 @@
         <br>
         <h2>News</h2>
                 <br>
-                <div class="news">
+                <div class="news" id="news" style="overflow:auto;height:300px" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()">
                 <ul>
                 <li> <span class="emph">1 -- 8 Sep 2018</span> I'll be giving a seminar at the <a href="http://mediterraneanschoolcomplex.net/">Mediterranean School of Complex Networks</a> in Salina, Sicily.
                 <li> <span class="emph">9 -- 14 Mar 2018</span> I'll be visiting the <a href="https://idss.mit.edu/">Institute for Data, Systems, and Society</a> at MIT, MA, USA.
                 <li> <span class="emph">5 -- 8 Mar 2018</span> I'll be attending <a href="http://complenet.weebly.com/">Complenet '18</a> in Boston, MA, USA.
                 <li> <span class="emph">28 Feb -- 2 Mar 2018</span> I'll be visiting the <a href="https://cds.nyu.edu/">Center for Data Science</a> at New York University, NY, USA.
                 <li> <span class="emph">26 Feb 2018</span> I'll be giving a seminar at the <a href="http://tdccbr.med.utoronto.ca/">Donnelly Centre</a> at the University of Toronto, Canada.
+                <li> <span class="emph">20 Feb 2018</span> I'll be giving a talk at <a href="http://www.istc.cnr.it/">Institute of Cognitive Sciences and Technologies</a> in Rome, Italy.
                 <li> <span class="emph">19 -- 23 Feb 2018</span> I'll be visiting <a href="https://web.uniroma2.it/home/newlang/english">University of Rome Tor Vergata</a> in Rome, Italy.
                 <li> <span class="emph">29 Jan -- 2 Feb 2018</span> I am organising the <a href="https://wwcs2018.github.io/">4th Winter Workshop on Complex Systems</a> in Utrecht, The Netherlands.
                 <li> <span class="emph">1 Dec 2017</span> I'm proud to have received an award for Best Oral Presentation for a talk on multiscale mixing at <a href="http://complexnetworks.org/">Complex Networks 2017</a>.
