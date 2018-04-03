@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF8">
 <meta name="description" content="description"/>
-<meta name="keywords" content="keywords"/> 
-<meta name="author" content="author"/> 
+<meta name="keywords" content="keywords"/>
+<meta name="author" content="author"/>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
@@ -45,38 +45,38 @@ svg {
 
 	<div class="container">
 
-		<div class="main">		
-			
+		<div class="main">
+
 			<div id="content"; class="content">
             <div class="title">Leto Peel</div>
 				<p class="olive">Research Homepage</p>
-                
+
 				<h2>Multiscale mixing in networks</h2>
-                
-        <p>Our <a href="https://arxiv.org/pdf/1708.01236.pdf" onClick="ga('send', 'event', 'Papers', 'Downloaded', 'Multiscale mixing demo');">multiscale mixing method</a>
+
+        <p>Our <a href="https://doi.org/10.1073/pnas.1713019115" onClick="ga('send', 'event', 'Papers', 'Downloaded', 'Multiscale mixing demo');">multiscale mixing method</a>
         quantifies the assortativity of
-        a node attrbribute with the local region of a given node.  Below is a visualisation of 
+        a node attrbribute with the local region of a given node.  Below is a visualisation of
         the social networks of the first 10 universities to join Facebook. The node colour indicates
         the assortativity (red = assortative, blue = disassortative) and the colour of the links
         indicates if the linked nodes have the same (red) or different (blue) attributes.
-        
+
         <p><p>
 
         <div id="viz">
   University: <select id="networkSelector"></select><br>
   <canvas></canvas><svg></svg>
 </div>
-                
+
         </div>
 				<iframe src="sidenav.html" width="210" height="1800" frameborder="0">
 				<a href="sidenav.html">Hmm, you are using a very old browser.
 				Click here to go directly to included content.</a>
 				</iframe>
 
-			
+
 
 			<div class="clearer"></div>
-            
+
 
 		</div>
 
@@ -90,7 +90,7 @@ svg {
 
 </body>
   <footer>
-    
+
 <script>
 var netJSON = "fb10/facebook008-all.json";
 
@@ -100,7 +100,7 @@ var width = 1000,
 var svg = d3.select("svg")
     .attr("width", width)
     .attr("height", height);
-    
+
 var canvas = d3.select("canvas")
     .attr("width", width)
     .attr("height", height);
@@ -137,7 +137,7 @@ function generateNetworkList(schools) {
     var option=networkSel.append("option");
       option.text(schools[school])
       .attr("value", school);
-    
+
     //set starting country
     if (school==7) option.attr("selected",true);
 
@@ -175,17 +175,17 @@ svg.selectAll("*").remove();
 
             //container for all buttons
             var allButtons= svg.append("g")
-                                .attr("id","allButtons") 
+                                .attr("id","allButtons")
 
             //fontawesome button labels
             var labels= metas;
 
-            //colors for different button states 
+            //colors for different button states
             var defaultColor= "#7777BB"
             var hoverColor= "#0000ff"
             var pressedColor= "#000077"
 
-            
+
 
             var bWidth= 100; //button width
             var bHeight= 25; //button height
@@ -193,7 +193,7 @@ svg.selectAll("*").remove();
             var x0= 20; //x offset
             var y0= 10; //y offset
 
-            
+
 
             function updateButtonColors(button, parent) {
                 parent.selectAll("rect")
@@ -211,12 +211,12 @@ netJSON = "fb10/facebook" + schoolID + "-all.json";
 d3.json(netJSON, function(error, graph) {
   if (error) throw error;
     d3.select("#numberToggle").text("[...LOADING...]");
-  
+
   var sampleNodes = graph.nodes;
 
   var sampleLinks = graph.links;
-       
-  
+
+
 
       force = d3.layout.force()
       .size([width,height])
@@ -227,7 +227,7 @@ d3.json(netJSON, function(error, graph) {
       .nodes(sampleNodes)
       .links(sampleLinks)
       .on("end", forceTick); //uncomment for dynamic vis
-      
+
 //~      d3.select("svg").selectAll("link")
 //~       .data(graph.links)
 //~     .enter().append("line")
@@ -248,16 +248,16 @@ d3.json(netJSON, function(error, graph) {
       .style("stroke", "black")
       .style("stroke-width", 1)
       .call(force.drag);
-      
-      
+
+
       force.start();
 //~       for (var i = 0; i < 200; ++i) force.tick();
 //~       force.stop();
-      
+
       function forceTick() { //uncomment for dynamic vis
-      
+
       d3.select("#numberToggle").text("")
-      
+
     d3.selectAll(".node").transition()
       .style("fill",  function(d) {return color(selectAssort(d,meta)); })
       .attr("d", d3.svg.symbol()
@@ -267,7 +267,7 @@ d3.json(netJSON, function(error, graph) {
 //~         console.log(selectAssort(node,meta));
 //~          console.log(d);
 //~         })
-      
+
 //~       	var context = d3.select("canvas").node().getContext("2d");
 //~         context.scale(devicePixelRatio, devicePixelRatio);
         context.clearRect(0,0,width,height);
@@ -275,9 +275,9 @@ d3.json(netJSON, function(error, graph) {
         context.fillRect(0,0,width,height);   // x, y, width, height
         context.lineWidth = 1;
 //~         context.strokeStyle = "rgba(255, 255, 255, 0.3)";
-      
 
-      
+
+
       sampleLinks.forEach(function (link) {
       //if (link.source.dormM==link.target.dormM) {
       if (selectMeta(link.source,meta)==selectMeta(link.target,meta)) {
@@ -291,14 +291,14 @@ d3.json(netJSON, function(error, graph) {
 //~         context.strokeStyle = function(link) { if (link.source.M==link.target.M) {return "rgba(255, 0, 0, 0.3)"; } else {return "rgba(0, 0, 255, 0.3)";} };
         context.stroke();
       })
-        
+
 
         d3.selectAll("path")
         .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")";})
-        
+
       } //uncomment for dynamic vis
-      
-      
+
+
       //groups for each button (which will hold a rect and text)
             var buttonGroups= allButtons.selectAll("g.button")
                                     .data(labels)
@@ -338,7 +338,7 @@ d3.json(netJSON, function(error, graph) {
                         .attr("ry",5)
                         .attr("fill",function(d,i) {if (i==0) {return pressedColor;} else {return defaultColor;}})
 
-            //adding text to each toggle button group, centered 
+            //adding text to each toggle button group, centered
             //within the toggle button rect
             buttonGroups.append("text")
                         .attr("class","buttonText")
@@ -351,9 +351,9 @@ d3.json(netJSON, function(error, graph) {
                         .attr("dominant-baseline","central")
                         .attr("fill","white")
                         .text(function(d) {return d;})
-            
-            
-            
+
+
+
       });
       } //load
 
