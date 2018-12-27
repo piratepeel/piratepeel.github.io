@@ -51,7 +51,16 @@ function resumeDiv() {
 	ScrollInterval    = setInterval('scrollDiv()', ScrollRate);
 }
 </script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-39202310-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </head>
 
 <body onLoad="scrollDiv_init()">
@@ -65,8 +74,9 @@ function resumeDiv() {
 <!--<h2>Something</h2>-->
 	<ul>
 		<li><a href="index.html" target="_parent">Home</a></li>
-        <li><a href="projects.html" target="_parent">Projects</a></li>
+        	<li><a href="leto_peel_cv.pdf" target="_parent" onClick="ga('send', 'event', 'CV', 'Downloaded', 'CV');">CV</a></li>
 		<li><a href="publications.html" target="_parent">Publications</a></li>
+		<li><a href="projects.html" target="_parent">Projects</a></li>
 		<li><a href="code.html" target="_parent">Code</a></li>
 		<li><a href="datasets.html" target="_parent">Data</a></li>
 		<li><a href="service.html" target="_parent">Service</a></li>
