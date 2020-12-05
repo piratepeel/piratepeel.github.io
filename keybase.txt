@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/piratepeel
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://piratepeel.github.io
+  * I am piratepeel (https://keybase.io/piratepeel) on keybase.
+  * I have a public key ASBm0LOO1Cd2opSOy2YF9VnL7A7R6SdxtDlrk0uBT5CkFQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012066d0b38ed42776a2948ecb6605f559cbec0ed1e92771b4396b934b814f90a4150a",
+      "host": "keybase.io",
+      "kid": "012066d0b38ed42776a2948ecb6605f559cbec0ed1e92771b4396b934b814f90a4150a",
+      "uid": "273de20ea28ed90d5d05c222b302c219",
+      "username": "piratepeel"
+    },
+    "merkle_root": {
+      "ctime": 1607186629,
+      "hash": "c2f20a2d16b5c3fa2b0368451c95d2295ffdd529a43bd2cda46f70325bb65c54bbc932ca6c8dcc71ac0057dceb9be318349010dcbca6676e4040bfafac67ebd6",
+      "hash_meta": "cbc70b16bdd548190d8bc5407b0da085241b881b92edaf7f519738e87cff6f4f",
+      "seqno": 18321552
+    },
+    "service": {
+      "entropy": "vNgUb7SljASk3NqUBwQ6P8Uv",
+      "hostname": "piratepeel.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.2"
+  },
+  "ctime": 1607186673,
+  "expire_in": 504576000,
+  "prev": "93aed8bf3495496d4909445b3bd1e4362fc117c45f156d2a6a634f4063aa6da3",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgZtCzjtQndqKUjstmBfVZy+wO0ekncbQ5a5NLgU+QpBUKp3BheWxvYWTESpcCB8Qgk67YvzSVSW1JCURbO9HkNi/BF8RfFW0qamNPQGOqbaPEIGkPgvajk+DqYsf59VtPJCOSbIZbVljlxliqC5MGlsHpAgHCo3NpZ8RAtFu52hqHZz8zGKzjzLtY5zVH3lyIg08inM12iWelER4xIvoaJx8UKvHDg3DQo2HUqmbar10YUgblwobVEAvTDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILBWGQfjmsewBQ0l5NKygBngYserQ1zBaWXlhxjdU5Zmo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/piratepeel
+
+==================================================================
