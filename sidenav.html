@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
 <meta name="description" content="description"/>
-<meta name="keywords" content="keywords"/> 
-<meta name="author" content="author"/> 
+<meta name="keywords" content="keywords"/>
+<meta name="author" content="author"/>
 <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
 <title>Leto Peel</title>
 
@@ -16,28 +16,28 @@ ScrollRate = 100;
 function scrollDiv_init() {
 	DivElmnt = document.getElementById('news');
 	ReachedMaxScroll = false;
-	
+
 	DivElmnt.scrollTop = 0;
 	PreviousScrollTop  = 0;
-	
+
 	ScrollInterval = setInterval('scrollDiv()', ScrollRate);
 }
 
 
 
 function scrollDiv() {
-	
+
 	if (!ReachedMaxScroll) {
 		DivElmnt.scrollTop = PreviousScrollTop;
 		PreviousScrollTop++;
-		
+
 		ReachedMaxScroll = DivElmnt.scrollTop >= (DivElmnt.scrollHeight - DivElmnt.offsetHeight);
 	}
 	else {
-    
+
         DivElmnt.scrollTop = 0;
         PreviousScrollTop  = 0;
-        
+
         ReachedMaxScroll = false;
 	}
 }
@@ -86,14 +86,15 @@ function resumeDiv() {
                 <br>
                 <div class="news" id="news" style="overflow:auto;height:300px" onMouseOver="pauseDiv()" onMouseOut="resumeDiv()">
                 <ul>
-		<li> <span class="emph">18 -- 22 Jul 2022</span> I'll be teaching in the <a href="https://utrechtsummerschool.nl/courses/social-sciences/network-science" target="_blank">Utrecht Summer SChool on Network Science</a>.
+        <li> <span class="emph">7 -- 10 Nov 2022</span> I'll be giving two talks at <a href="https://complexnetworks.org/" target="_blank">The 11th International Conference on Complex Networks and their Applications</a>.
+        <li> <span class="emph">18 -- 22 Jul 2022</span> I'll be teaching in the <a href="https://utrechtsummerschool.nl/courses/social-sciences/network-science" target="_blank">Utrecht Summer SChool on Network Science</a>.
 		<li> <span class="emph">01 Jul 2022</span> My NWO VIDI grant on "Reconstructing networks from uncertain time-evolving data" was awarded!
 		<li> <span class="emph">20 May 2022</span> I'm giving a talk in the <a href="https://www.universiteitleiden.nl/en/events/2022/05/lcn2-seminar-may-2022" target="_blank">LCN2 Seminar series</a> in Leiden
 		<li> <span class="emph">19 May 2022</span> I'm attending the Dutch Network Science Society Symposium 2022
 		</ul>
                 </div>
         <br>
-        
+
         <a class="twitter-timeline"  href="https://twitter.com/PiratePeel"  data-widget-id="402191733103923200">Tweets by @PiratePeel</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
     p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);
