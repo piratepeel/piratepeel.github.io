@@ -16,12 +16,24 @@
             }
           },
           {
+            "id": "c2e642ac542ced72",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Publications.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "1e1a97ac0325d532",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "menu.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Publications.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Publications.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Publications.md"
               }
             }
           }
@@ -155,12 +167,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1e1a97ac0325d532",
+  "active": "c2e642ac542ced72",
   "lastOpenFiles": [
-    "img/leto_300.png",
-    "img/leto_500.png",
+    "Publications.md",
     "menu.md",
     "README.md",
+    "img/leto_300.png",
+    "img/leto_500.png",
     "Index.md",
     "img/leto.png",
     "img/piratepeel_logo.png",
@@ -179,7 +192,6 @@
     "old/MITresults.svg",
     "old/Networks2014/images/network.png",
     "old/Networks2014/images/Microsoft_Research_logo.jpg",
-    "old/teaching/network9nodes.png",
-    "old/img/stripes.gif"
+    "old/teaching/network9nodes.png"
   ]
 }
