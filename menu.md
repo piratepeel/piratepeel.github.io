@@ -1,5 +1,6 @@
 [CV](leto_peel_cv.pdf)  
 [Publications](Publications.html)  
+[People](People.html)  
 
 ---
 [GScholar](https://scholar.google.com/citations?user=GR-yASwAAAAJ&hl=en)  
