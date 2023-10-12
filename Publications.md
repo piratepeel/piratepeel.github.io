@@ -1,9 +1,11 @@
 # Publications
+---
 
 ## Submitted Papers
 - [**Detectability of hierarchical communities in networks**](https://arxiv.org/pdf/2009.07525.pdf)  
     **Leto Peel**, Michael T. Schaub  
     2020  
+
 ## Refereed Publications
 - [**Hierarchical community structure in networks**](https://doi.org/10.1103/PhysRevE.107.054305)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.107.054305.pdf) [[arxiv version]](https://arxiv.org/pdf/2009.07196.pdf) [[slides]](https://piratepeel.github.io/old/slides/Hier_ComplexNetworks.pdf)  
