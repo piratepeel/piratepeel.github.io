@@ -94,9 +94,9 @@
     Prognostics and Health Management (PHM) 2008  
     *IEEE GOLD Winner of PHM Challenge 2008*
 
-  ## Other publications
+## Other publications
 - #### [**A model petting zoo for interacting with network structure**](https://doi.org/10.24072/pci.networksci.100114)  
-    **Leto Peel**
+    **Leto Peel**  
     Peer Community in Network Science 2023
 - #### [**Dynamical Game Theory**](http://santafe.edu/media/cms_page_media/598/DrunkGameTheory.pdf)  
     Alberto Antonioni, Luis A. Martinez-Vaquero, Nicholas Mathis, **Leto Peel**, Massimo Stella  
