@@ -1,10 +1,9 @@
 # People
 
 
-| ![Leto](img/leto_300.png) | Leto Peel <br />*Assistant Professor* |
-|  :--: | :-- |
-| |
-
+| ![Leto](img/leto_300.png) | ![white box](img/white_box.png) | ![white box](img/white_box.png) |
+|  :--: | :-- | :--: |
+| **Leto Peel** <br />*Assistant Professor*|
 
 
 | ![jiaze](img/jiaze.png)  | ![jiaze](img/mingrong.png)  | ![jiaze](img/david.png)  |
