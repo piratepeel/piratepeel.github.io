@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "menu.md",
+                "file": "Publications.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "menu.md",
+                "file": "Publications.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "menu.md",
+                "file": "Publications.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "menu.md"
+                "file": "Publications.md"
               }
             }
           }
@@ -169,8 +169,8 @@
   },
   "active": "c2e642ac542ced72",
   "lastOpenFiles": [
-    "Publications.md",
     "menu.md",
+    "Publications.md",
     "README.md",
     "img/leto_300.png",
     "img/leto_500.png",

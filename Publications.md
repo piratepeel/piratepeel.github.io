@@ -2,28 +2,28 @@
 ---
 
 ## Submitted Papers
-- [**Detectability of hierarchical communities in networks**](https://arxiv.org/pdf/2009.07525.pdf)  
+- ### [**Detectability of hierarchical communities in networks**](https://arxiv.org/pdf/2009.07525.pdf)  
     **Leto Peel**, Michael T. Schaub  
     2020  
 
 ## Refereed Publications
-- [**Hierarchical community structure in networks**](https://doi.org/10.1103/PhysRevE.107.054305)  
+- ### [**Hierarchical community structure in networks**](https://doi.org/10.1103/PhysRevE.107.054305)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.107.054305.pdf) [[arxiv version]](https://arxiv.org/pdf/2009.07196.pdf) [[slides]](https://piratepeel.github.io/old/slides/Hier_ComplexNetworks.pdf)  
     Michael T. Schaub, Jiaze Li, **Leto Peel**  
     Physical Review E 2023 **107** (5):054305
-- [**Statistical inference links data and theory in network science**](https://doi.org/10.1038/s41467-022-34267-9)  
+- ### [**Statistical inference links data and theory in network science**](https://doi.org/10.1038/s41467-022-34267-9)  
     **Leto Peel**, Tiago P. Peixoto, Manlio De Domenico  
     Nature Communications 2022 **13** 6794
-- [**Network constraints on the mixing patterns of binary node metadata**](https://doi.org/10.1103/PhysRevE.102.062310)  
+- ### [**Network constraints on the mixing patterns of binary node metadata**](https://doi.org/10.1103/PhysRevE.102.062310)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.102.062310.pdf) [[arxiv version]](https://arxiv.org/pdf/1908.04588.pdf)  
     Matteo Cinelli, **Leto Peel**, Antonio Iovanella, Jean-Charles Delvenne  
     Physical Review E 2020 **102** (6):062310
-- [**Community detection in networks without observing edges**](https://doi.org/10.1126/sciadv.aav1478)  
+- ### [**Community detection in networks without observing edges**](https://doi.org/10.1126/sciadv.aav1478)  
     [[arxiv version]](https://arxiv.org/pdf/1808.06079.pdf) [[slides]](https://piratepeel.github.io/old/slides/CCS_community_unobserved_2018.pdf)  
     Till Hoffmann, **Leto Peel**, Renaud Lambiotte, Nick S. Jones  
     Science Advances 2020 **6** (4):eaav1478  
     Preprint featured on the PLOS Complexity Channel, Sep. 2018
-- [**Individual perception dynamics in drunk games**](https://doi.org/10.1103/PhysRevE.99.052311)  
+- ### [**Individual perception dynamics in drunk games**](https://doi.org/10.1103/PhysRevE.99.052311)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.99.052311.pdf) [[arxiv version]](https://arxiv.org/pdf/1807.08635)  
     Alberto Antonioni, Luis A. Martinez-Vaquero, Cole Mathis, **Leto Peel**, Massimo Stella  
     Physical Review E 2019 **99** (5):052311  
