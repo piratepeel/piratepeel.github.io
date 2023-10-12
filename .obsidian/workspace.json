@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Courses.md",
+                "file": "menu.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Courses.md",
+                "file": "menu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Courses.md",
+                "file": "menu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Courses.md"
+                "file": "menu.md"
               }
             }
           }
@@ -181,7 +181,7 @@
   },
   "active": "42e91247b5933545",
   "lastOpenFiles": [
-    "Courses.md",
+    "Teaching.md",
     "People.md",
     "menu.md",
     "Publications.md",
