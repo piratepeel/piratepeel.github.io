@@ -16,12 +16,24 @@
             }
           },
           {
+            "id": "42e91247b5933545",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Courses.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "bf1b70d3144f6507",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "menu.md",
+                "file": "People.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "menu.md",
+                "file": "Courses.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "menu.md",
+                "file": "Courses.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "menu.md"
+                "file": "Courses.md"
               }
             }
           }
@@ -167,11 +179,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bf1b70d3144f6507",
+  "active": "42e91247b5933545",
   "lastOpenFiles": [
-    "Publications.md",
-    "menu.md",
+    "Courses.md",
     "People.md",
+    "menu.md",
+    "Publications.md",
     "img/white_box.png",
     "img/david.png",
     "img/mingrong.png",
