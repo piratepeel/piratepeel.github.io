@@ -16,12 +16,24 @@
             }
           },
           {
+            "id": "bf1b70d3144f6507",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "People.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "c2e642ac542ced72",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Publications.md",
+                "file": "menu.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Publications.md",
+                "file": "People.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Publications.md",
+                "file": "People.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Publications.md"
+                "file": "People.md"
               }
             }
           }
@@ -155,12 +167,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c2e642ac542ced72",
+  "active": "bf1b70d3144f6507",
   "lastOpenFiles": [
+    "img/david.png",
+    "menu.md",
+    "People.md",
+    "img/mingrong.png",
+    "img/jiaze.png",
+    "Publications.md",
     "leto_peel_cv.pdf",
     "letopeel_academic_cv7.pdf",
-    "menu.md",
-    "Publications.md",
     "README.md",
     "img/leto_300.png",
     "img/leto_500.png",
@@ -176,11 +192,6 @@
     "_includes/head-custom-google-analytics.html",
     "_includes",
     "assets/css/style.scss",
-    "assets/css",
-    "assets",
-    "old/MITresults.svg",
-    "old/Networks2014/images/network.png",
-    "old/Networks2014/images/Microsoft_Research_logo.jpg",
-    "old/teaching/network9nodes.png"
+    "assets/css"
   ]
 }
