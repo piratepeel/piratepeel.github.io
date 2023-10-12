@@ -22,12 +22,12 @@
     [[arxiv version]](https://arxiv.org/pdf/1808.06079.pdf) [[slides]](https://piratepeel.github.io/old/slides/CCS_community_unobserved_2018.pdf)  
     Till Hoffmann, **Leto Peel**, Renaud Lambiotte, Nick S. Jones  
     Science Advances 2020 **6** (4):eaav1478  
-    Preprint featured on the PLOS Complexity Channel, Sep. 2018
+    *Preprint featured on the PLOS Complexity Channel, Sep. 2018*
 - ### [**Individual perception dynamics in drunk games**](https://doi.org/10.1103/PhysRevE.99.052311)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.99.052311.pdf) [[arxiv version]](https://arxiv.org/pdf/1807.08635)  
     Alberto Antonioni, Luis A. Martinez-Vaquero, Cole Mathis, **Leto Peel**, Massimo Stella  
     Physical Review E 2019 **99** (5):052311  
-    Featured on the Physical Review E Kaleidoscope, May 2019
+    *Featured on the Physical Review E Kaleidoscope, May 2019*
 - [**The architecture of an empirical genotype-phenotype map**](https://onlinelibrary.wiley.com/doi/epdf/10.1111/evo.13487)  
     José Aguilar-Rodríguez, **Leto Peel**, Massimo Stella, Andreas Wagner, Joshua L. Payne  
     International Journal of Organic Evolution 2018 **72** (6):1242-1260
@@ -35,7 +35,7 @@
     [[arxiv version]](https://arxiv.org/pdf/1708.01236.pdf) [[slides]](https://piratepeel.github.io/old/slides/Multiscale_mixing_Complex_Networks.pdf)  
     **Leto Peel**, Jean-Charles Delvenne, Renaud Lambiotte  
     Proceedings of the National Academy of Sciences USA 2018 **115** (16):4057-4062  
-    Best Oral Presentation Award at Complex Networks 2017
+    *Best Oral Presentation Award at Complex Networks 2017*
 - [**The ground truth about metadata and community detection in networks**](http://advances.sciencemag.org/content/3/5/e1602548)  
     [[arxiv version]](http://arxiv.org/pdf/1608.05878.pdf) [[slides]](https://piratepeel.github.io/old/slides/groundtruth_presentation.pdf)  
     **Leto Peel**, Daniel B Larremore, Aaron Clauset  
@@ -44,7 +44,7 @@
     [[arxiv version]](https://arxiv.org/pdf/1612.05001.pdf)  
     **Leto Peel**  
     SIAM International Conference on Data Mining (SDM) 2017  
-    Acceptance Rate 26%
+    *Acceptance Rate 26%*
 - [**Detectability thresholds and optimal algorithms for community structure in dynamic networks**](http://link.aps.org/doi/10.1103/PhysRevX.6.031005)
     [[arxiv version]](http://arxiv.org/pdf/1506.06179.pdf)  
     Amir Ghasemian, Pan Zhang, Aaron Clauset, Cristopher Moore, **Leto Peel**  
@@ -53,12 +53,12 @@
     [[arxiv version (extended)]](http://arxiv.org/pdf/1504.05872.pdf)  
     **Leto Peel**, Aaron Clauset  
     IEEE International Conference on Data Mining (ICDM) 2015  
-    Acceptance Rate 18.2% (Regular paper 8.4%)
+    *Acceptance Rate (Regular paper) 8.4%*
 - [**Detecting Change Points in the Large-scale Structure of Evolving Networks**](http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9485)  
     [[arxiv version (extended)]](http://arxiv.org/pdf/1403.0989.pdf)  
     **Leto Peel**, Aaron Clauset  
     29th AAAI Conference on Artificial Intelligence (AAAI) 2015  
-    Acceptance Rate 26.7%
+    *Acceptance Rate 26.7%*
 - [**Active Discovery of Network Roles for Predicting the Classes of Network Nodes**](http://academic.oup.com/comnet/article/3/3/431/381805/Active-discovery-of-network-roles-for-predicting?guestAccessKey=ce134b3b-e082-4fd3-be48-491fdf362624)  
     [[arxiv version]](http://arxiv.org/pdf/1312.7258.pdf)  
     **Leto Peel**  
@@ -79,20 +79,20 @@
     [[arxiv version]](http://arxiv.org/pdf/1110.4285.pdf)  
     **Leto Peel**  
     14th International Conference on Information Fusion (FUSION) 2011  
-    3rd Best Student Paper
+    *3rd Best Student Paper*
 - [**Capturing Time-of-Flight Data with Confidence**](http://dx.doi.org/10.1109/CVPR.2011.5995550)  
     Malcolm Reynolds, Jozef Doboš, **Leto Peel**, Tim Weyrich, Gabriel J. Brostow  
     Computer Vision and Pattern Recognition (CVPR) 2011  
-    Acceptance Rate 26.4%
+    *Acceptance Rate 26.4%*
 - [**Estimating Network Parameters for Selecting Community Detection Algorithms**](http://dx.doi.org/10.1109/ICIF.2010.5712065)  
     [[arxiv version]](http://arxiv.org/pdf/1010.5377.pdf)  
     **Leto Peel**  
     13th International Conference on Information Fusion (FUSION) 2010  
-    Honourable Mention in Best Student Paper Category
+    *Honourable Mention in Best Student Paper Category*
 - [**Data Driven Prognostics using a Kalman Filter Ensemble of Neural Network Models**](http://dx.doi.org/10.1109/PHM.2008.4711423)  
     **Leto Peel**  
     Prognostics and Health Management (PHM) 2008  
-    IEEE GOLD Winner of PHM Challenge 2008
+    *IEEE GOLD Winner of PHM Challenge 2008*
 
   ## Workshop and other publications
 - [**Dynamical Game Theory**](http://santafe.edu/media/cms_page_media/598/DrunkGameTheory.pdf)  
