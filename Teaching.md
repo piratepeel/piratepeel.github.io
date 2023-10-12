@@ -1,3 +1,5 @@
+# Teaching
+
 I currently teach the following courses at Maastricht University:
 
 - #### [Research Methods for Global Studies II (GLO1221)](GlobalStudiesQuantMethodsS1/) 	
