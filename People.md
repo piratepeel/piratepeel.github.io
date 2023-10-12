@@ -3,6 +3,7 @@
 
 | ![Leto](img/leto_300.png) | Leto Peel <br />*Assistant Professor* |
 |  :--: | :-- |
+| |
 
 
 
