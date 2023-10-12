@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Publications.md",
+                "file": "menu.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Publications.md",
+                "file": "menu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Publications.md",
+                "file": "menu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Publications.md"
+                "file": "menu.md"
               }
             }
           }
@@ -169,13 +169,13 @@
   },
   "active": "bf1b70d3144f6507",
   "lastOpenFiles": [
+    "Publications.md",
     "menu.md",
     "People.md",
     "img/white_box.png",
     "img/david.png",
     "img/mingrong.png",
     "img/jiaze.png",
-    "Publications.md",
     "leto_peel_cv.pdf",
     "letopeel_academic_cv7.pdf",
     "README.md",
