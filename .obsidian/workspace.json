@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "4701320b592ee00a",
+    "type": "split",
+    "children": [
+      {
+        "id": "842fc48023053db2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27e4a3cbe49f137a",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "1e1a97ac0325d532",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "menu.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0df12bbb6206f692",
+    "type": "split",
+    "children": [
+      {
+        "id": "a6a2a0e5a81c3f3c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "56fe6154af4487e3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6e4c19145e978593",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "093a54c83e257565",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2e870c012fb844f9",
+    "type": "split",
+    "children": [
+      {
+        "id": "d084be7cbaee26ea",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d6437df2120b45e4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "menu.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ab2c59a79f5bc3ad",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "menu.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d5a4c42ac49714a4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "50aad85e73e3541a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "menu.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1e1a97ac0325d532",
+  "lastOpenFiles": [
+    "Index.md",
+    "img/leto.png",
+    "img/piratepeel_logo.png",
+    "img/logo_piratepeel.png",
+    "img/class_journals.jpg",
+    "img",
+    "menu.md",
+    "_config.yml",
+    "_layouts/default.html",
+    "_layouts",
+    "_includes/head-custom-google-analytics.html",
+    "_includes",
+    "assets/css/style.scss",
+    "assets/css",
+    "assets",
+    "old/catxml.js",
+    "old/MITresults.svg",
+    "old/Networks2014/images/network.png",
+    "old/Networks2014/images/Microsoft_Research_logo.jpg",
+    "old/teaching/network9nodes.png",
+    "old/img/stripes.gif",
+    "old/img/sportscreen.png"
+  ]
+}
