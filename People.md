@@ -8,7 +8,7 @@
 
 | ![jiaze](img/jiaze.png)  | ![jiaze](img/mingrong.png)  | ![jiaze](img/david.png)  |
 | :--: | :--: | :--: |
-| **Jiaze Li** <br />*PhD Candidate*<br />2021 – present | **Mingrong She** <br />*PhD Candidate*<br />2021 – present | **Dávid Ferenczi** <br />*PhD Candidate*<br />2023 – present |
+| [**Jiaze Li**](http://eggplantisme.eu.pythonanywhere.com/) <br />*PhD Candidate*<br />2021 – present | **Mingrong She** <br />*PhD Candidate*<br />2021 – present | **Dávid Ferenczi** <br />*PhD Candidate*<br />2023 – present |
 
 
 
