@@ -24,7 +24,7 @@
     Science Advances 2020 **6** (4):eaav1478  
     *Preprint featured on the PLOS Complexity Channel, Sep. 2018*
 - #### [**Individual perception dynamics in drunk games**](https://doi.org/10.1103/PhysRevE.99.052311)  
-    [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.99.052311.pdf) [[arxiv version]](https://arxiv.org/pdf/1807.08635)  
+    [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.99.052311.pdf) [[arxiv version]](https://arxiv.org/pdf/1807.08635) [[code]](https://piratepeel.github.io/old/code/DGT_ABM_drunk_prisoner.html)  
     Alberto Antonioni, Luis A. Martinez-Vaquero, Cole Mathis, **Leto Peel**, Massimo Stella  
     Physical Review E 2019 **99** (5):052311  
     *Featured on the Physical Review E Kaleidoscope, May 2019*
