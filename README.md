@@ -3,6 +3,7 @@
 I'm an Assistant Professor at the [Department of Data Analytics and Digitalisation](https://www.maastrichtuniversity.nl/research/department-data-analytics-and-digitalisation-dad) (School of Business and Economics) of [Maastricht University](https://www.maastrichtuniversity.nl/). My main research interests are in machine learning for complex networks, in particular the use of probabilistic generative models and Bayesian inference.
 
 I completed my doctorate at the Computer Science Department of University College London while working as a research scientist at BAE Systems Advanced Technology Centre and then later as a research associate at UCL CEGE Department working on the Crime Policing and Citizenship Project. I have held postdoctoral positions at University of Colorado at Boulder and Université catholique de Louvain and have been a visiting researcher at the Université de Namur.
+I was supported by the MOVE-IN Louvain (MSCA COFUND) and FNRS Chargé de recherches postdoctoral fellowships and received a NWO VIDI grant in 2022. I am currently leading the organisation of the NetSci 2025 conference.
 
 ## My Research
 
