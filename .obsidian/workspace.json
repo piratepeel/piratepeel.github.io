@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Publications.md",
+                "file": "People.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Publications.md",
+                "file": "People.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Publications.md",
+                "file": "People.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Publications.md"
+                "file": "People.md"
               }
             }
           }
@@ -160,25 +160,25 @@
   },
   "active": "bf1b70d3144f6507",
   "lastOpenFiles": [
-    "code.md",
+    "leto_peel_cv.pdf",
+    "letopeel_academic_cv7.pdf",
+    "img/yijie.png",
+    "img/chandra.png",
+    "img/IMG_0348.jpeg",
+    "img/david2024.png",
+    "img/Chandra.jpeg",
+    "img/Yijie.png",
+    "img/Chandra.png",
+    "img/photo-Yijie.jpg",
+    "img/UM-SBE-Ferenczi-David-20231026-1-3k.jpg",
     "Publications.md",
+    "code.md",
     "README.md",
     "Teaching.md",
     "People.md",
     "menu.md",
     "img/white_box.png",
-    "img/david.png",
-    "img/mingrong.png",
-    "img/jiaze.png",
-    "leto_peel_cv.pdf",
-    "letopeel_academic_cv7.pdf",
-    "img/leto_300.png",
-    "img/leto_500.png",
     "Index.md",
-    "img/leto.png",
-    "img/piratepeel_logo.png",
-    "img/logo_piratepeel.png",
-    "img/class_journals.jpg",
     "img",
     "_config.yml",
     "_layouts/default.html",
