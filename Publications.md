@@ -7,7 +7,7 @@
     2024  
 
 ## Refereed Publications
-- #### [**Detectability of hierarchical communities in networks**](https://doi.org/10.1103/PhysRevE.107.054305)  
+- #### [**Detectability of hierarchical communities in networks**](https://doi.org/10.1103/PhysRevE.110.034306)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.110.034306.pdf) [[arxiv version]](https://arxiv.org/pdf/2009.07525.pdf)    
     **Leto Peel**, Michael T. Schaub  
     Physical Review E 2024 **110** (3):034306
