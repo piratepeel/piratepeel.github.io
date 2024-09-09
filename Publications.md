@@ -5,11 +5,12 @@
 - #### [**Gender differences in collaboration and career progression in physics**](https://arxiv.org/pdf/2408.02482.pdf)  
     Mingrong She, Jan Bachmann, Fariba Karimi, **Leto Peel**  
     2024  
-- #### [**Detectability of hierarchical communities in networks**](https://arxiv.org/pdf/2009.07525.pdf)  
-    **Leto Peel**, Michael T. Schaub  
-    2020  
 
 ## Refereed Publications
+- #### [**Detectability of hierarchical communities in networks**](https://doi.org/10.1103/PhysRevE.107.054305)  
+    [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.110.034306.pdf) [[arxiv version]](https://arxiv.org/pdf/2009.07525.pdf)    
+    **Leto Peel**, Michael T. Schaub  
+    Physical Review E 2024 **110** (3):034306
 - #### [**Hierarchical community structure in networks**](https://doi.org/10.1103/PhysRevE.107.054305)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.107.054305.pdf) [[arxiv version]](https://arxiv.org/pdf/2009.07196.pdf) [[slides]](https://piratepeel.github.io/old/slides/Hier_ComplexNetworks.pdf)  
     Michael T. Schaub, Jiaze Li, **Leto Peel**  

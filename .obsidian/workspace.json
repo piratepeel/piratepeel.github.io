@@ -160,6 +160,8 @@
   },
   "active": "bf1b70d3144f6507",
   "lastOpenFiles": [
+    "old/pubs/PhysRevE.110.034306.pdf",
+    "old/pubs/63_PhysRevE2024.pdf",
     "People.md",
     "menu.md",
     "leto_peel_cv.pdf",
@@ -185,7 +187,6 @@
     "_layouts",
     "_includes/head-custom-google-analytics.html",
     "_includes",
-    "assets/css/style.scss",
-    "assets/css"
+    "assets/css/style.scss"
   ]
 }
