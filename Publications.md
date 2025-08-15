@@ -1,12 +1,11 @@
 # Publications
 ---
 
-## Submitted Papers
-- #### [**Gender differences in collaboration and career progression in physics**](https://arxiv.org/pdf/2408.02482.pdf)  
-    Mingrong She, Jan Bachmann, Fariba Karimi, **Leto Peel**  
-    2024  
-
 ## Refereed Publications
+- #### [**Gender differences in collaboration and career progression in physics**](https://doi.org/10.1098/rsos.241536)
+    [[arxiv version]](https://arxiv.org/pdf/2408.02482.pdf)  
+    Mingrong She, Jan Bachmann, Fariba Karimi, **Leto Peel**  
+    Royal Society Open Science 2025  **12** (8):241536  
 - #### [**Detectability of hierarchical communities in networks**](https://doi.org/10.1103/PhysRevE.110.034306)  
     [[pdf]](https://piratepeel.github.io/old/pubs/PhysRevE.110.034306.pdf) [[arxiv version]](https://arxiv.org/pdf/2009.07525.pdf)    
     **Leto Peel**, Michael T. Schaub  
