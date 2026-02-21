@@ -2,6 +2,9 @@
 ---
 
 ## Manuscripts under review
+* #### [**Graphs are maximally expressive for higher-order interactions**](https://arxiv.org/abs/2602.16937)
+    [[arxiv version]](https://arxiv.org/pdf/2602.16937.pdf)  
+    Tiago P. Peixoto, **Leto Peel**, Thilo Gross, Manlio De Domenico  
 * #### [**Higher order trade-offs in hypergraph community detection**](https://arxiv.org/abs/2601.10502)
     [[arxiv version]](https://arxiv.org/pdf/2601.10502.pdf)  
     Jiaze Li, Michael T. Schaub, **Leto Peel**  
