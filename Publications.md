@@ -2,6 +2,9 @@
 ---
 
 ## Manuscripts under review
+* #### [**Academic collaborations and movements towards successful careers in physics**](https://arxiv.org/abs/2602.22031)
+    [[arxiv version]](https://arxiv.org/pdf/2602.22031.pdf)  
+    Mingrong She, Jan Bachmann, Fariba Karimi, **Leto Peel**  
 * #### [**Graphs are maximally expressive for higher-order interactions**](https://arxiv.org/abs/2602.16937)
     [[arxiv version]](https://arxiv.org/pdf/2602.16937.pdf)  
     Tiago P. Peixoto, **Leto Peel**, Thilo Gross, Manlio De Domenico  
