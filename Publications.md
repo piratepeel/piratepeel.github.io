@@ -2,6 +2,9 @@
 ---
 
 ## Manuscripts under review
+* #### [**Detectability of minority communities in networks**](https://arxiv.org/abs/2604.18565)
+    [[arxiv version]](https://arxiv.org/pdf/2604.18565.pdf)  
+    Jiaze Li, **Leto Peel**  
 * #### [**Academic collaborations and movements towards successful careers in physics**](https://arxiv.org/abs/2602.22031)
     [[arxiv version]](https://arxiv.org/pdf/2602.22031.pdf)  
     Mingrong She, Jan Bachmann, Fariba Karimi, **Leto Peel**  
