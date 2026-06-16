@@ -14,11 +14,13 @@
 * #### [**Higher order trade-offs in hypergraph community detection**](https://arxiv.org/abs/2601.10502)
     [[arxiv version]](https://arxiv.org/pdf/2601.10502.pdf)  
     Jiaze Li, Michael T. Schaub, **Leto Peel**  
-* #### [**Inferring signed social networks from contact patterns**](https://arxiv.org/abs/2601.10565)
-    [[arxiv version]](https://arxiv.org/pdf/2601.10565)  
-    Dávid Ferenczi, Jean-Gabriel Young, **Leto Peel**  
+
 
 ## Refereed Publications
+- #### [**Inferring signed social networks from contact patterns**](https://doi.org/10.1088/2632-072X/ae76ae)
+    [[arxiv version]](https://arxiv.org/pdf/2601.10565)  
+    Dávid Ferenczi, Jean-Gabriel Young, **Leto Peel**  
+    Journal of Physics: Complexity 2026 **7** (2):025018  
 - #### [**Gender differences in collaboration and career progression in physics**](https://doi.org/10.1098/rsos.241536)
     [[arxiv version]](https://arxiv.org/pdf/2408.02482.pdf)  
     Mingrong She, Jan Bachmann, Fariba Karimi, **Leto Peel**  
