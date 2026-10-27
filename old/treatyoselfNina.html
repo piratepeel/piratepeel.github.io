@@ -97,6 +97,13 @@
   .row b{color:var(--purple);text-transform:uppercase;font-size:13px;letter-spacing:2px;align-self:center}
   .row span{font-weight:800;text-align:right}
 
+  .ticket-head{cursor:pointer;user-select:none}
+  .wish{display:none;flex-direction:column;gap:8px;padding:14px 0 4px;border-top:2px dotted #f0c2d8;animation:fadeUp .5s cubic-bezier(.2,1.4,.4,1)}
+  .wish.on{display:flex}
+  .wish b{color:var(--purple);text-transform:uppercase;font-size:13px;letter-spacing:2px}
+  .wish input{font:inherit;font-weight:600;font-size:16px;padding:12px 16px;border-radius:16px;border:3px solid var(--ink);background:#fff;color:var(--ink);width:100%}
+  .wish input:focus{outline:none;box-shadow:4px 4px 0 var(--pink)}
+  .hint{text-align:center;font-size:12px;color:#b98aa8;margin:-12px 0 18px;font-style:italic}
   #toast{
     position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(140%);z-index:10;
     background:var(--ink);color:var(--gold);font-family:'Abril Fatface',serif;font-size:24px;padding:14px 30px;border-radius:999px;
@@ -131,12 +138,26 @@ const steps = [
   { id:"start", q:"When does the treating begin?", sub:"Your day, your schedule.", opts:[
     { l:"Early as fuck", e:"🌅", d:"What's more fun than waking up early and starting the day with a sunrise activity?" },
     { l:"Brunchtime",    e:"🥂", d:"Obviously it's way more fun to start with a boozy brunch at a reasonable hour." },
-    { l:"After lunch",   e:"🛁", d:"A quiet morning to get ready for the day." } ]},
+    { l:"After lunch",   e:"🛁", d:"A quiet morning to get ready for the day." },
+    { l:"Surprise me", e:"🎁", d:"Your friends set the alarm. You find out when they knock." } ]},
+  { id:"sunrise", when:a => a.start === "Early as fuck", q:"Where shall we watch the sunrise?", sub:"Your friends are fully committed. Emotionally.", opts:[
+    { l:"Livestream", e:"📱", d:"We'll watch it on YouTube from bed. Same sun." },
+    { l:"Your bedroom window", e:"🪟", d:"We'll be there in spirit. And in bed." },
+    { l:"The sunset instead", e:"🌇", d:"Basically the same thing, just later." },
+    { l:"Surprise me", e:"🎁", d:"Your friends promise to try. No promises." } ]},
+  { id:"brunch", when:a => a.start === "Early as fuck" || a.start === "Brunchtime", q:"Where's brunch?", sub:"The most important meal of the day. Today, anyway.", opts:[
+    { l:"Coffeelovers Dominicanen", e:"⛪", d:"Brunch in a church turned bookstore. Holy pancakes." },
+    { l:"Bisschopsmolen", e:"🌾", d:"Fresh bread and pastries from the old watermill." },
+    { l:"De Brandweerkantine", e:"🚒", d:"Brunch in a converted fire station. Things will get hot." },
+    { l:"Van Wijck", e:"☕", d:"Wyck classic with excellent espresso." },
+    { l:"Livin' Room", e:"🥑", d:"Cosy side-street café. Smoothie bowls for the virtuous." },
+    { l:"Surprise me", e:"🎁", d:"Your friends pick, and you find out when you arrive." } ]},
   { id:"afternoon", q:"Pick your afternoon treat", sub:"Something glorious between meals.", opts:[
     { l:"Wine tasting", e:"🍷", d:"Swirl, sniff, sip, and confidently describe notes of oak." },
     { l:"Cave biking", e:"🚴‍♀️", d:"Cycling through the caves underground. Helmets will be worn." },
     { l:"Museum visit", e:"🖼️", d:"Culture, contemplation, and judging the art loudly." },
-    { l:"Silly city scavenger hunt", e:"🗺️", d:"Ridiculous challenges all over town. Dignity optional." } ]},
+    { l:"Silly city scavenger hunt", e:"🗺️", d:"Ridiculous challenges all over town. Dignity optional." },
+    { l:"Surprise me", e:"🎁", d:"Your friends pick, and you find out when you get there." } ]},
   { id:"dinner", q:"Where shall we feast?", sub:"Calories don't count today.", opts:[
     { l:"Marres Kitchen", e:"🍽️", d:"Dinner at Marres Kitchen." },
     { l:"BOLD", e:"🔥", d:"Dinner at BOLD." },
@@ -146,35 +167,46 @@ const steps = [
     { l:"Karaoke", e:"🎤", d:"The stage awaits. Again." },
     { l:"Pool", e:"🎱", d:"Cue sticks and premium trash talk." },
     { l:"Prison Island", e:"🔐", d:"Fast challenge rooms. Loud and competitive." },
-    { l:"Bowling", e:"🎳", d:"Strikes, gutters, and questionable shoes." } ]},
+    { l:"Bowling", e:"🎳", d:"Strikes, gutters, and questionable shoes." },
+    { l:"Surprise me", e:"🎁", d:"Your friends pick the battleground. Bring your A-game." } ]},
   { id:"drinks", q:"Drinks at…", sub:"Where the night keeps going.", opts:[
     { l:"Gouverneur", e:"🍸", d:"Drinks at Gouverneur." },
     { l:"Hallo Mestreeg", e:"🍹", d:"Drinks at Hallo Mestreeg." },
     { l:"Café Zuid", e:"🍺", d:"Drinks at Café Zuid." },
-    { l:"Bar Brutal", e:"🥃", d:"Drinks at Bar Brutal." } ]},
+    { l:"Bar Brutal", e:"🥃", d:"Drinks at Bar Brutal." },
+    { l:"Mr. Smiths", e:"🎩", d:"Drinks at Mr. Smiths." },
+    { l:"Surprise me", e:"🎁", d:"Your friends pick the bar. Just follow the leader." } ]},
   { id:"after", q:"Where's the afterparty?", sub:"Includes the official cleanup crew guarantee: your friends leave the place spotless before anyone goes home.", opts:[
     { l:`At ${NAME}'s place`, e:"🏠", d:"Home turf advantage." },
-    { l:"At Simone's place", e:"🪩", d:"Someone else's floors to worry about." } ]},
-  { id:"rules", q:"The rules of the day", sub:"One rule everyone must obey, no questions asked.", opts:[
-    { l:"Call me Birthday Icon", e:"💅", d:"All day. Penalties for slip-ups." },
+    { l:"At Simone's place", e:"🪩", d:"Someone else's floors to worry about." },
+    { l:"Surprise me", e:"🎁", d:"Your friends decide whose floors suffer." } ]},
+  { id:"rules", multi:3, q:"The rules of the day", sub:"Pick up to three. Everyone must obey, no questions asked.", opts:[
+    { l:"I choose my own title", e:"🏷️", d:"Everyone must call me whatever I want all day. Slip-ups cost a round." },
     { l:"I control the music", e:"🎶", d:"All day. Nobody skips my songs." },
     { l:"Nobody may say no to me", e:"🙅‍♀️", d:"Within reason. Mostly." },
-    { l:"Give me a hype person", e:"📣", d:"Someone cheers loudly for everything I do." } ]},
+    { l:"Give me a hype person", e:"📣", d:"Someone cheers loudly for everything I do." },
+    { l:"Right hands only", e:"✋", d:`Everyone drinks with their right hand. I decide which hand is "right".` },
+    { l:"Every toast is to me", e:"🥂", d:"No other reasons to raise a glass are permitted." },
+    { l:"I carry nothing", e:"👜", d:"Bags, coats, shopping. Friends are the pack mules." },
+    { l:"First bite is mine", e:"🍴", d:"Of every dish at every table, all day." },
+    { l:"Personal photographer", e:"📸", d:"Someone is on duty to make me look amazing in every photo." },
+    { l:"Surprise me", e:"🎁", d:"Your friends pick a rule. You enforce it." } ]},
   { id:"dress", q:"Set the dress code", sub:"Your friends will comply.", opts:[
     { l:"Full glam", e:"✨", d:"Everyone dresses up. Sequins strongly encouraged." },
     { l:"Comfy chic", e:"🧦", d:"Stylish but stretchy." },
     { l:`Everyone dresses as ${NAME}`, e:"🪞", d:"Imitation is the sincerest form of flattery." },
-    { l:"Matching outfits", e:"👯‍♀️", d:"The squad, fully coordinated." } ]}
+    { l:"Matching outfits", e:"👯‍♀️", d:"The squad, fully coordinated." },
+    { l:"Surprise me", e:"🎁", d:"Your friends choose the look. No vetoes." } ]}
 ];
 
-const summaryLabels = { start:"Kick-off", afternoon:"Afternoon", dinner:"Dinner", evening:"Evening", drinks:"Drinks", after:"Afterparty", rules:"Rule of the day", dress:"Dress code" };
-const hype = ["Iconic.","You deserve this.","Treat. Yo. Self.","Exquisite taste.","Obviously.","Stunning choice.","Yes. Yes. Yes.","Luxury."];
+const summaryLabels = { start:"Kick-off", sunrise:"Sunrise", brunch:"Brunch", afternoon:"Afternoon", dinner:"Dinner", evening:"Evening", drinks:"Drinks", after:"Afterparty", rules:"Rules of the day", dress:"Dress code" };
+const hype = ["Iconic.","You deserve this.","Treat. Yo. Self.","Exquisite taste.","Obviously.","Stunning choice.","Yes. Yes. Yes.","Luxury.","RAMPAGE!"];
 
 let page = -1, ans = {};
 const app = document.getElementById("app");
 
 document.getElementById("marquee").innerHTML =
-  Array(2).fill(`<span>TREAT YO' SELF</span><span>★</span><span>${NAME.toUpperCase()}'S BIRTHDAY</span><span>★</span><span>YOU DESERVE IT</span><span>★</span><span>TREAT YO' SELF</span><span>★</span><span>NO REGRETS</span><span>★</span>`).join("");
+  Array(2).fill(`<span>TREAT YO' SELF</span><span>★</span><span>${NAME.toUpperCase()}'S BIRTHDAY</span><span>★</span><span>YOU DESERVE IT</span><span>★</span><span>TREAT YO' SELF</span><span>★</span><span>NO REGRETS</span><span>★</span><span>RAMPAGE!</span><span>★</span>`).join("");
 
 const sp = document.getElementById("sparkles");
 for (let i = 0; i < 28; i++) {
@@ -212,6 +244,10 @@ function toast(msg) {
   toastTimer = setTimeout(() => t.classList.remove("show"), 1600);
 }
 
+const shown = i => !steps[i].when || steps[i].when(ans);
+function nextPage(i) { do i++; while (i < steps.length && !shown(i)); return i; }
+function prevPage(i) { do i--; while (i >= 0 && !shown(i)); return i; }
+
 function go(p) { page = p; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
 
 function landing() {
@@ -229,14 +265,15 @@ function render() {
   if (page < 0) return landing();
   if (page >= steps.length) return summary();
   const s = steps[page], cur = ans[s.id];
-  const pct = Math.round((page + 1) / steps.length * 100);
+  const vis = steps.map((_, i) => i).filter(shown), pos = vis.indexOf(page) + 1, total = vis.length;
+  const pct = Math.round(pos / total * 100);
   app.innerHTML = `<div class="page">
-    <div class="meta"><span class="tag">Treat #${page + 1}</span><span class="count">${page + 1} of ${steps.length}</span></div>
+    <div class="meta"><span class="tag">Treat #${pos}</span><span class="count">${pos} of ${total}</span></div>
     <div class="progress"><div class="progress-fill" style="width:${pct}%"></div></div>
     <h2 class="display q">${s.q}</h2>
     <p class="sub">${s.sub}</p>
     <div class="opts">${s.opts.map((o, k) => `
-      <button class="opt ${cur === o.l ? "sel" : ""}" data-k="${k}">
+      <button class="opt ${(s.multi ? (cur || []).includes(o.l) : cur === o.l) ? "sel" : ""}" data-k="${k}">
         <span class="emoji" aria-hidden="true">${o.e}</span>
         <span><span class="opt-title">${o.l}</span><span class="opt-desc">${o.d}</span></span>
       </button>`).join("")}</div>
@@ -247,18 +284,32 @@ function render() {
     </div>
   </div>`;
   app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
-    ans[s.id] = s.opts[+b.dataset.k].l;
-    app.querySelectorAll(".opt").forEach(x => x.classList.remove("sel"));
-    b.classList.add("sel");
-    document.getElementById("err").textContent = "";
+    const v = s.opts[+b.dataset.k].l, err = document.getElementById("err");
+    if (s.multi) {
+      const list = ans[s.id] || [];
+      if (list.includes(v)) {
+        ans[s.id] = list.filter(x => x !== v);
+        b.classList.remove("sel");
+        err.textContent = "";
+        return;
+      }
+      if (list.length >= s.multi) { err.textContent = `${s.multi} rules max. Even icons have limits.`; return; }
+      ans[s.id] = [...list, v];
+      b.classList.add("sel");
+    } else {
+      ans[s.id] = v;
+      app.querySelectorAll(".opt").forEach(x => x.classList.remove("sel"));
+      b.classList.add("sel");
+    }
+    err.textContent = "";
     boom(false);
     toast(hype[Math.floor(Math.random() * hype.length)]);
   });
-  document.getElementById("back").onclick = () => go(page - 1);
+  document.getElementById("back").onclick = () => go(prevPage(page));
   document.getElementById("next").onclick = () => {
-    if (!ans[s.id]) { document.getElementById("err").textContent = "Pick something first. Indecision is not a treat."; return; }
+    if (!ans[s.id] || (s.multi && !ans[s.id].length)) { document.getElementById("err").textContent = "Pick something first. Indecision is not a treat."; return; }
     if (s.id === "theme" && ans.theme === "Solitude") return solitude();
-    go(page + 1);
+    go(nextPage(page));
   };
 }
 
@@ -275,9 +326,14 @@ function solitude() {
 }
 
 function summary() {
-  const keys = Object.keys(summaryLabels);
-  const rows = keys.map(k => `<div class="row"><b>${summaryLabels[k]}</b><span>${ans[k]}</span></div>`).join("");
-  const txt = `✨ ${NAME}'s Treat Yo' Self Day ✨\n` + keys.map(k => `${summaryLabels[k]}: ${ans[k]}`).join("\n");
+  const keys = Object.keys(summaryLabels).filter(k => ans[k] && ans[k].length && shown(steps.findIndex(x => x.id === k)));
+  const val = k => Array.isArray(ans[k]) ? ans[k].join(" · ") : ans[k];
+  const rows = keys.map(k => `<div class="row"><b>${summaryLabels[k]}</b><span>${val(k)}</span></div>`).join("");
+  const txt = () => `🚨 YOUR INSTRUCTIONS HAVE ARRIVED 🚨\n${NAME} has spoken. Do not disturb her with questions.\n\n` +
+    keys.map(k => `${summaryLabels[k]}: ${val(k)}`).join("\n") +
+    (ans.wishOn && ans.wish && ans.wish.trim() ? `\n🧞 Wildcard wish: ${ans.wish.trim()}` : "") +
+    `\n\nCompliance is mandatory. Treat. Yo. Self. 🎉`;
+  const esc = t => String(t || "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
   app.innerHTML = `<div class="page">
     <div class="center">
       <span class="tag">It's official</span>
@@ -285,9 +341,14 @@ function summary() {
       <p class="script">Treat. Yo. Self.</p>
     </div>
     <div class="ticket">
-      <div class="ticket-head">Admit one birthday icon</div>
+      <div class="ticket-head" id="thead">${NAME}'s Treat Yo' Self Pass</div>
       ${rows}
+      <div class="wish ${ans.wishOn ? "on" : ""}" id="wish">
+        <b>🧞 Wildcard wish</b>
+        <input id="wishIn" maxlength="140" placeholder="Anything. Your friends will make it happen." value="${esc(ans.wish)}">
+      </div>
     </div>
+    <p class="hint" id="hint" ${ans.wishOn ? 'style="visibility:hidden"' : ""}>psst… the pass is ticklish</p>
     <p class="center sub">Your friends have been notified and will now handle absolutely everything. Your only job is to show up and be fabulous.</p>
     <div class="btns center">
       <button class="btn" id="copy">Copy my choices</button>
@@ -301,15 +362,26 @@ function summary() {
   </div>`;
   boom(true);
   const m = document.getElementById("cmsg");
+  let taps = 0;
+  document.getElementById("thead").onclick = () => {
+    if (ans.wishOn || ++taps < 5) return;
+    ans.wishOn = true;
+    document.getElementById("wish").classList.add("on");
+    document.getElementById("hint").style.visibility = "hidden";
+    boom(true);
+    toast("Secret unlocked 🧞");
+    setTimeout(() => document.getElementById("wishIn").focus(), 400);
+  };
+  document.getElementById("wishIn").oninput = e => { ans.wish = e.target.value; };
   document.getElementById("copy").onclick = () => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(txt).then(
+      navigator.clipboard.writeText(txt()).then(
         () => { m.textContent = "Copied. Paste it in the group chat."; toast("Copied ✨"); },
         () => { m.textContent = "Couldn't copy. Take a screenshot instead."; });
     } else { m.textContent = "Couldn't copy. Take a screenshot instead."; }
   };
-  document.getElementById("wa").onclick = () => window.open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank");
-  document.getElementById("edit").onclick = () => go(steps.length - 1);
+  document.getElementById("wa").onclick = () => window.open("https://wa.me/?text=" + encodeURIComponent(txt()), "_blank");
+  document.getElementById("edit").onclick = () => go(prevPage(steps.length));
   document.getElementById("restart").onclick = () => { ans = {}; go(-1); };
 }
 
