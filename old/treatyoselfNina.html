@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treat Yo' Self Day — Nina's Birthday Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ff2d87; --hot:#ff5fa2; --orange:#ff8a00; --gold:#ffc83d;
+    --purple:#7b2ff7; --ink:#2a0a2e; --cream:#fff8ef;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    min-height:100vh; font-family:'Poppins',sans-serif; color:var(--ink);
+    background:linear-gradient(-45deg,var(--pink),var(--orange),var(--purple),var(--hot));
+    background-size:400% 400%; animation:bgShift 14s ease infinite; overflow-x:hidden;
+  }
+  @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+  .marquee{background:var(--ink);color:var(--gold);border-bottom:5px solid var(--gold);overflow:hidden;white-space:nowrap;position:relative;z-index:5}
+  .marquee-track{display:inline-block;padding:12px 0;font-family:'Abril Fatface',serif;font-size:22px;letter-spacing:2px;animation:marquee 22s linear infinite}
+  .marquee-track span{margin:0 28px}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  #sparkles{position:fixed;inset:0;pointer-events:none;z-index:1}
+  .sparkle{position:absolute;color:#fff;font-size:18px;animation:twinkle 3s ease-in-out infinite;text-shadow:0 0 12px #fff,0 0 24px var(--gold)}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(180deg)}}
+
+  main{position:relative;z-index:3;padding:40px 16px 80px}
+  .card{
+    max-width:760px;margin:0 auto;background:var(--cream);border-radius:36px;padding:44px 36px;position:relative;
+    box-shadow:0 0 0 6px var(--gold),0 0 0 12px var(--pink),0 0 0 18px var(--gold),0 40px 90px rgba(0,0,0,.4);
+  }
+  .page{animation:fadeUp .6s cubic-bezier(.2,1.4,.4,1)}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(40px) scale(.96)}to{opacity:1;transform:none}}
+
+  .tag{display:inline-block;background:var(--ink);color:var(--gold);font-weight:800;font-size:13px;letter-spacing:3px;text-transform:uppercase;padding:8px 18px;border-radius:999px;border:2px solid var(--gold)}
+  .display{
+    font-family:'Abril Fatface',serif;line-height:.95;margin:18px 0 10px;
+    background:linear-gradient(90deg,var(--pink),var(--orange),var(--purple),var(--pink));background-size:300% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite;
+  }
+  @keyframes shine{to{background-position:300% 0}}
+  .hero{font-size:clamp(56px,13vw,112px);text-align:center}
+  .q{font-size:clamp(34px,7vw,52px)}
+  .script{font-family:'Pacifico',cursive;color:var(--pink);font-size:clamp(22px,5vw,32px);margin:0}
+  .sub{font-size:17px;color:#6b3a5e;margin:6px 0 24px}
+
+  .progress{height:18px;background:#f3d9e6;border-radius:999px;overflow:hidden;margin:20px 0 28px;border:3px solid var(--ink)}
+  .progress-fill{height:100%;border-radius:999px;transition:width .6s cubic-bezier(.2,1.4,.4,1);
+    background:repeating-linear-gradient(45deg,var(--pink) 0 14px,var(--gold) 14px 28px);background-size:40px 40px;animation:stripes 1s linear infinite}
+  @keyframes stripes{to{background-position:40px 0}}
+  .meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .count{font-weight:800;color:var(--purple)}
+
+  .opts{display:grid;gap:14px}
+  .opt{
+    display:flex;gap:16px;align-items:center;text-align:left;width:100%;cursor:pointer;font:inherit;color:var(--ink);
+    padding:18px 20px;border-radius:22px;border:3px solid var(--ink);background:#fff;
+    box-shadow:6px 6px 0 var(--ink);transition:transform .15s,box-shadow .15s,background .2s;
+  }
+  .opt:hover{transform:translate(-3px,-3px) rotate(-.5deg);box-shadow:9px 9px 0 var(--pink)}
+  .opt.sel{background:linear-gradient(120deg,var(--pink),var(--orange));color:#fff;box-shadow:9px 9px 0 var(--gold);animation:pulse 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+  .emoji{font-size:40px;flex-shrink:0;width:56px;text-align:center}
+  .opt.sel .emoji{animation:spin .7s ease}
+  @keyframes spin{from{transform:rotate(-30deg) scale(.6)}to{transform:none}}
+  .opt-title{display:block;font-weight:800;font-size:19px}
+  .opt-desc{display:block;font-size:14px;line-height:1.5;margin-top:3px;opacity:.85}
+
+  .btns{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .btns.center{justify-content:center}
+  .btn{
+    font:inherit;font-weight:800;font-size:18px;cursor:pointer;padding:16px 32px;border-radius:999px;border:3px solid var(--ink);
+    background:linear-gradient(120deg,var(--pink),var(--orange));color:#fff;box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s
+  }
+  .btn:hover{transform:translate(-2px,-2px) scale(1.04);box-shadow:8px 8px 0 var(--gold)}
+  .btn.ghost{background:#fff;color:var(--ink)}
+  .btn.big{font-size:22px;padding:20px 44px;animation:bounce 2s ease-in-out infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .err{color:#d1003f;font-weight:800;min-height:24px;margin:14px 0 0;text-align:center}
+
+  .intro{max-width:520px;margin:10px auto 30px;text-align:center;font-size:17px;line-height:1.7}
+  .center{text-align:center}
+  .edition{font-family:'Abril Fatface',serif;font-size:20px;letter-spacing:4px;color:var(--purple);text-transform:uppercase}
+
+  .ticket{background:#fff;border:4px dashed var(--pink);border-radius:26px;padding:26px;margin:24px 0;position:relative}
+  .ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:34px;height:34px;background:var(--cream);border-radius:50%;transform:translateY(-50%);border:4px dashed var(--pink)}
+  .ticket::before{left:-21px}.ticket::after{right:-21px}
+  .ticket-head{font-family:'Abril Fatface',serif;font-size:26px;text-align:center;color:var(--pink);margin-bottom:12px}
+  .row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:2px dotted #f0c2d8;font-size:16px}
+  .row:last-child{border-bottom:none}
+  .row b{color:var(--purple);text-transform:uppercase;font-size:13px;letter-spacing:2px;align-self:center}
+  .row span{font-weight:800;text-align:right}
+
+  #toast{
+    position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(140%);z-index:10;
+    background:var(--ink);color:var(--gold);font-family:'Abril Fatface',serif;font-size:24px;padding:14px 30px;border-radius:999px;
+    border:3px solid var(--gold);transition:transform .4s cubic-bezier(.2,1.4,.4,1);white-space:nowrap
+  }
+  #toast.show{transform:translateX(-50%) translateY(0)}
+
+  @media (max-width:560px){.card{padding:32px 20px;border-radius:28px}.emoji{font-size:32px;width:42px}.btn{font-size:16px;padding:14px 24px}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+<div id="sparkles" aria-hidden="true"></div>
+
+<main>
+  <div class="card"><div id="app"></div></div>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+const NAME = "Nina";
+
+const steps = [
+  { id:"theme", q:"Choose your vibe", sub:"Choose wisely. This decides everything.", opts:[
+    { l:"Solitude", e:"🛋️", d:"Your friends leave you alone for a full day and you order Thuisbezorgd.nl on their dime. Selecting this ends the survey." },
+    { l:"Company",  e:"🎉", d:"Your friends join you for a fun-filled day built from the choices you make next." } ]},
+  { id:"start", q:"When does the treating begin?", sub:"Your day, your schedule.", opts:[
+    { l:"Early as fuck", e:"🌅", d:"What's more fun than waking up early and starting the day with a sunrise activity?" },
+    { l:"Brunchtime",    e:"🥂", d:"Obviously it's way more fun to start with a boozy brunch at a reasonable hour." },
+    { l:"After lunch",   e:"🛁", d:"A quiet morning to get ready for the day." } ]},
+  { id:"afternoon", q:"Pick your afternoon treat", sub:"Something glorious between meals.", opts:[
+    { l:"Wine tasting", e:"🍷", d:"Swirl, sniff, sip, and confidently describe notes of oak." },
+    { l:"Cave biking", e:"🚴‍♀️", d:"Cycling through the caves underground. Helmets will be worn." },
+    { l:"Museum visit", e:"🖼️", d:"Culture, contemplation, and judging the art loudly." },
+    { l:"Silly city scavenger hunt", e:"🗺️", d:"Ridiculous challenges all over town. Dignity optional." } ]},
+  { id:"dinner", q:"Where shall we feast?", sub:"Calories don't count today.", opts:[
+    { l:"Marres Kitchen", e:"🍽️", d:"Dinner at Marres Kitchen." },
+    { l:"BOLD", e:"🔥", d:"Dinner at BOLD." },
+    { l:"NOON", e:"🌊", d:"Riverside dining by the Maas." },
+    { l:"Surprise me", e:"🎁", d:"Your friends pick, and you find out when you arrive." } ]},
+  { id:"evening", q:"Choose your evening activity", sub:"Time to get competitive.", opts:[
+    { l:"Karaoke", e:"🎤", d:"The stage awaits. Again." },
+    { l:"Pool", e:"🎱", d:"Cue sticks and premium trash talk." },
+    { l:"Prison Island", e:"🔐", d:"Fast challenge rooms. Loud and competitive." },
+    { l:"Bowling", e:"🎳", d:"Strikes, gutters, and questionable shoes." } ]},
+  { id:"drinks", q:"Drinks at…", sub:"Where the night keeps going.", opts:[
+    { l:"Gouverneur", e:"🍸", d:"Drinks at Gouverneur." },
+    { l:"Hallo Mestreeg", e:"🍹", d:"Drinks at Hallo Mestreeg." },
+    { l:"Café Zuid", e:"🍺", d:"Drinks at Café Zuid." },
+    { l:"Bar Brutal", e:"🥃", d:"Drinks at Bar Brutal." } ]},
+  { id:"after", q:"Where's the afterparty?", sub:"Includes the official cleanup crew guarantee: your friends leave the place spotless before anyone goes home.", opts:[
+    { l:`At ${NAME}'s place`, e:"🏠", d:"Home turf advantage." },
+    { l:"At Simone's place", e:"🪩", d:"Someone else's floors to worry about." } ]},
+  { id:"rules", q:"The rules of the day", sub:"One rule everyone must obey, no questions asked.", opts:[
+    { l:"Call me Birthday Icon", e:"💅", d:"All day. Penalties for slip-ups." },
+    { l:"I control the music", e:"🎶", d:"All day. Nobody skips my songs." },
+    { l:"Nobody may say no to me", e:"🙅‍♀️", d:"Within reason. Mostly." },
+    { l:"Give me a hype person", e:"📣", d:"Someone cheers loudly for everything I do." } ]},
+  { id:"dress", q:"Set the dress code", sub:"Your friends will comply.", opts:[
+    { l:"Full glam", e:"✨", d:"Everyone dresses up. Sequins strongly encouraged." },
+    { l:"Comfy chic", e:"🧦", d:"Stylish but stretchy." },
+    { l:`Everyone dresses as ${NAME}`, e:"🪞", d:"Imitation is the sincerest form of flattery." },
+    { l:"Matching outfits", e:"👯‍♀️", d:"The squad, fully coordinated." } ]}
+];
+
+const summaryLabels = { start:"Kick-off", afternoon:"Afternoon", dinner:"Dinner", evening:"Evening", drinks:"Drinks", after:"Afterparty", rules:"Rule of the day", dress:"Dress code" };
+const hype = ["Iconic.","You deserve this.","Treat. Yo. Self.","Exquisite taste.","Obviously.","Stunning choice.","Yes. Yes. Yes.","Luxury."];
+
+let page = -1, ans = {};
+const app = document.getElementById("app");
+
+document.getElementById("marquee").innerHTML =
+  Array(2).fill(`<span>TREAT YO' SELF</span><span>★</span><span>${NAME.toUpperCase()}'S BIRTHDAY</span><span>★</span><span>YOU DESERVE IT</span><span>★</span><span>TREAT YO' SELF</span><span>★</span><span>NO REGRETS</span><span>★</span>`).join("");
+
+const sp = document.getElementById("sparkles");
+for (let i = 0; i < 28; i++) {
+  const s = document.createElement("div");
+  s.className = "sparkle";
+  s.textContent = ["✦","✧","★","✺"][i % 4];
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.top = Math.random() * 100 + "vh";
+  s.style.animationDelay = (Math.random() * 3) + "s";
+  s.style.fontSize = (12 + Math.random() * 20) + "px";
+  sp.appendChild(s);
+}
+
+function boom(big) {
+  if (typeof confetti !== "function") return;
+  const colors = ["#ff2d87","#ffc83d","#7b2ff7","#ff8a00","#ffffff"];
+  if (big) {
+    const end = Date.now() + 2500;
+    (function frame() {
+      confetti({ particleCount: 7, angle: 60, spread: 70, origin: { x: 0 }, colors });
+      confetti({ particleCount: 7, angle: 120, spread: 70, origin: { x: 1 }, colors });
+      if (Date.now() < end) requestAnimationFrame(frame);
+    })();
+  } else {
+    confetti({ particleCount: 70, spread: 80, origin: { y: 0.7 }, colors });
+  }
+}
+
+let toastTimer;
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 1600);
+}
+
+function go(p) { page = p; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+
+function landing() {
+  app.innerHTML = `<div class="page center">
+    <span class="tag">You are cordially invited</span>
+    <h1 class="display hero">Treat<br>Yo' Self</h1>
+    <p class="edition">${NAME}'s birthday edition</p>
+    <p class="intro">One perfect day, designed entirely by you and executed entirely by your friends. Every choice you make here becomes the plan. No compromises. No budgets. Okay, some budget. But mostly no compromises.</p>
+    <div class="btns center"><button class="btn big" id="start">Let's treat yo' self ✨</button></div>
+  </div>`;
+  document.getElementById("start").onclick = () => { boom(false); go(0); };
+}
+
+function render() {
+  if (page < 0) return landing();
+  if (page >= steps.length) return summary();
+  const s = steps[page], cur = ans[s.id];
+  const pct = Math.round((page + 1) / steps.length * 100);
+  app.innerHTML = `<div class="page">
+    <div class="meta"><span class="tag">Treat #${page + 1}</span><span class="count">${page + 1} of ${steps.length}</span></div>
+    <div class="progress"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <h2 class="display q">${s.q}</h2>
+    <p class="sub">${s.sub}</p>
+    <div class="opts">${s.opts.map((o, k) => `
+      <button class="opt ${cur === o.l ? "sel" : ""}" data-k="${k}">
+        <span class="emoji" aria-hidden="true">${o.e}</span>
+        <span><span class="opt-title">${o.l}</span><span class="opt-desc">${o.d}</span></span>
+      </button>`).join("")}</div>
+    <p class="err" id="err"></p>
+    <div class="btns">
+      <button class="btn ghost" id="back">← Back</button>
+      <button class="btn" id="next">Next →</button>
+    </div>
+  </div>`;
+  app.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    ans[s.id] = s.opts[+b.dataset.k].l;
+    app.querySelectorAll(".opt").forEach(x => x.classList.remove("sel"));
+    b.classList.add("sel");
+    document.getElementById("err").textContent = "";
+    boom(false);
+    toast(hype[Math.floor(Math.random() * hype.length)]);
+  });
+  document.getElementById("back").onclick = () => go(page - 1);
+  document.getElementById("next").onclick = () => {
+    if (!ans[s.id]) { document.getElementById("err").textContent = "Pick something first. Indecision is not a treat."; return; }
+    if (s.id === "theme" && ans.theme === "Solitude") return solitude();
+    go(page + 1);
+  };
+}
+
+function solitude() {
+  app.innerHTML = `<div class="page center">
+    <span class="tag">Request granted</span>
+    <h2 class="display q">Peace and quiet it is</h2>
+    <div style="font-size:72px;margin:10px 0">🛋️🍜📺</div>
+    <p class="intro">Your friends have been dismissed. Enjoy a full day of silence, a spotless home, and Thuisbezorgd.nl entirely on their dime. They will miss you terribly and will not be texting. Probably.</p>
+    <div class="btns center"><button class="btn" id="undo">Wait, I changed my mind</button></div>
+  </div>`;
+  boom(false);
+  document.getElementById("undo").onclick = () => { delete ans.theme; go(0); };
+}
+
+function summary() {
+  const keys = Object.keys(summaryLabels);
+  const rows = keys.map(k => `<div class="row"><b>${summaryLabels[k]}</b><span>${ans[k]}</span></div>`).join("");
+  const txt = `✨ ${NAME}'s Treat Yo' Self Day ✨\n` + keys.map(k => `${summaryLabels[k]}: ${ans[k]}`).join("\n");
+  app.innerHTML = `<div class="page">
+    <div class="center">
+      <span class="tag">It's official</span>
+      <h2 class="display q">Your day is booked</h2>
+      <p class="script">Treat. Yo. Self.</p>
+    </div>
+    <div class="ticket">
+      <div class="ticket-head">Admit one birthday icon</div>
+      ${rows}
+    </div>
+    <p class="center sub">Your friends have been notified and will now handle absolutely everything. Your only job is to show up and be fabulous.</p>
+    <div class="btns center">
+      <button class="btn" id="copy">Copy my choices</button>
+      <button class="btn" id="wa">Send on WhatsApp</button>
+    </div>
+    <div class="btns center">
+      <button class="btn ghost" id="edit">← Change something</button>
+      <button class="btn ghost" id="restart">Start over</button>
+    </div>
+    <p class="err" id="cmsg" style="color:var(--purple)"></p>
+  </div>`;
+  boom(true);
+  const m = document.getElementById("cmsg");
+  document.getElementById("copy").onclick = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(txt).then(
+        () => { m.textContent = "Copied. Paste it in the group chat."; toast("Copied ✨"); },
+        () => { m.textContent = "Couldn't copy. Take a screenshot instead."; });
+    } else { m.textContent = "Couldn't copy. Take a screenshot instead."; }
+  };
+  document.getElementById("wa").onclick = () => window.open("https://wa.me/?text=" + encodeURIComponent(txt), "_blank");
+  document.getElementById("edit").onclick = () => go(steps.length - 1);
+  document.getElementById("restart").onclick = () => { ans = {}; go(-1); };
+}
+
+render();
+</script>
+</body>
+</html>
