@@ -97,12 +97,13 @@
   .row b{color:var(--purple);text-transform:uppercase;font-size:13px;letter-spacing:2px;align-self:center}
   .row span{font-weight:800;text-align:right}
 
-  .ticket-head{cursor:pointer;user-select:none}
+  .ticket.tickle{cursor:pointer;user-select:none}
   .wish{display:none;flex-direction:column;gap:8px;padding:14px 0 4px;border-top:2px dotted #f0c2d8;animation:fadeUp .5s cubic-bezier(.2,1.4,.4,1)}
   .wish.on{display:flex}
   .wish b{color:var(--purple);text-transform:uppercase;font-size:13px;letter-spacing:2px}
-  .wish input{font:inherit;font-weight:600;font-size:16px;padding:12px 16px;border-radius:16px;border:3px solid var(--ink);background:#fff;color:var(--ink);width:100%}
-  .wish input:focus{outline:none;box-shadow:4px 4px 0 var(--pink)}
+  .wish small{font-size:14px;color:#6b3a5e}
+  .wish textarea{font:inherit;font-weight:600;font-size:16px;line-height:1.4;padding:12px 16px;border-radius:16px;border:3px solid var(--ink);background:#fff;color:var(--ink);width:100%;resize:vertical;min-height:80px}
+  .wish textarea:focus{outline:none;box-shadow:4px 4px 0 var(--pink)}
   .hint{text-align:center;font-size:12px;color:#b98aa8;margin:-12px 0 18px;font-style:italic}
   #toast{
     position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(140%);z-index:10;
@@ -133,7 +134,7 @@ const NAME = "Nina";
 
 const steps = [
   { id:"theme", q:"Choose your vibe", sub:"Choose wisely. This decides everything.", opts:[
-    { l:"Solitude", e:"🛋️", d:"Your friends leave you alone for a full day and you order Thuisbezorgd.nl on their dime. Selecting this ends the survey." },
+    { l:"Solitude", e:"🛋️", d:"Your friends leave you alone for a full day and you order Thuisbezorgd.nl on their dime." },
     { l:"Company",  e:"🎉", d:"Your friends join you for a fun-filled day built from the choices you make next." } ]},
   { id:"start", q:"When does the treating begin?", sub:"Your day, your schedule.", opts:[
     { l:"Early as fuck", e:"🌅", d:"What's more fun than waking up early and starting the day with a sunrise activity?" },
@@ -146,7 +147,9 @@ const steps = [
     { l:"The sunset instead", e:"🌇", d:"Basically the same thing, just later." },
     { l:"Surprise me", e:"🎁", d:"Your friends promise to try. No promises." } ]},
   { id:"brunch", when:a => a.start === "Early as fuck" || a.start === "Brunchtime", q:"Where's brunch?", sub:"The most important meal of the day. Today, anyway.", opts:[
-    { l:"Coffeelovers Dominicanen", e:"⛪", d:"Brunch in a church turned bookstore. Holy pancakes." },
+    { l:"Coffeelovers Dominicanen", e:"⛪", d:"Brunch in a church turned bookstore. Divine coffee." },
+    { l:"Coffeelovers Plein 1992", e:"🥞", d:"Pancakes by the river." },
+    { l:"Bottomless mimosa brunch at home", e:"🥂", d:"Your friends cook, the bubbles never stop, and nobody has to put on real trousers." },
     { l:"Bisschopsmolen", e:"🌾", d:"Fresh bread and pastries from the old watermill." },
     { l:"De Brandweerkantine", e:"🚒", d:"Brunch in a converted fire station. Things will get hot." },
     { l:"Van Wijck", e:"☕", d:"Wyck classic with excellent espresso." },
@@ -196,6 +199,7 @@ const steps = [
     { l:"Comfy chic", e:"🧦", d:"Stylish but stretchy." },
     { l:`Everyone dresses as ${NAME}`, e:"🪞", d:"Imitation is the sincerest form of flattery." },
     { l:"Matching outfits", e:"👯‍♀️", d:"The squad, fully coordinated." },
+    { l:"Silly costumes", e:"🤡", d:"Halloween, carnaval, or a theme of my choosing. Dignity optional." },
     { l:"Surprise me", e:"🎁", d:"Your friends choose the look. No vetoes." } ]}
 ];
 
@@ -340,12 +344,13 @@ function summary() {
       <h2 class="display q">Your day is booked</h2>
       <p class="script">Treat. Yo. Self.</p>
     </div>
-    <div class="ticket">
-      <div class="ticket-head" id="thead">${NAME}'s Treat Yo' Self Pass</div>
+    <div class="ticket ${ans.wishOn ? "" : "tickle"}" id="pass">
+      <div class="ticket-head">${NAME}'s Treat Yo' Self Pass</div>
       ${rows}
       <div class="wish ${ans.wishOn ? "on" : ""}" id="wish">
         <b>🧞 Wildcard wish</b>
-        <input id="wishIn" maxlength="140" placeholder="Anything. Your friends will make it happen." value="${esc(ans.wish)}">
+        <small>Name any treat. Your friends will make it happen.</small>
+        <textarea id="wishIn" rows="3" maxlength="200" placeholder="I wish…">${esc(ans.wish)}</textarea>
       </div>
     </div>
     <p class="hint" id="hint" ${ans.wishOn ? 'style="visibility:hidden"' : ""}>psst… the pass is ticklish</p>
@@ -363,9 +368,10 @@ function summary() {
   boom(true);
   const m = document.getElementById("cmsg");
   let taps = 0;
-  document.getElementById("thead").onclick = () => {
+  document.getElementById("pass").onclick = () => {
     if (ans.wishOn || ++taps < 5) return;
     ans.wishOn = true;
+    document.getElementById("pass").classList.remove("tickle");
     document.getElementById("wish").classList.add("on");
     document.getElementById("hint").style.visibility = "hidden";
     boom(true);
