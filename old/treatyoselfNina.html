@@ -344,8 +344,8 @@ function summary() {
   const esc = t => String(t || "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
   app.innerHTML = `<div class="page">
     <div class="center">
-      <span class="tag">It's official</span>
-      <h2 class="display q">Your day is booked</h2>
+      <span class="tag">Almost official</span>
+      <h2 class="display q">Your day is planned</h2>
       <p class="script">Treat. Yo. Self.</p>
     </div>
     <div class="ticket ${ans.wishOn ? "" : "tickle"}" id="pass">
@@ -358,7 +358,7 @@ function summary() {
       </div>
     </div>
     <p class="hint" id="hint" ${ans.wishOn ? 'style="visibility:hidden"' : ""}>psst… the pass is ticklish</p>
-    <p class="center sub">Your friends have been notified and will now handle absolutely everything. Your only job is to show up and be fabulous.</p>
+    <p class="center sub">One last step: send your choices to your friends on WhatsApp. Once they have their orders, they handle absolutely everything. Your only job is to show up and be fabulous.</p>
     <div class="btns center">
       <button class="btn" id="copy">Copy my choices</button>
       <button class="btn" id="wa">Send on WhatsApp</button>
